@@ -11,14 +11,14 @@ import org.codehaus.jackson.node.ObjectNode;
 import org.junit.Assert;
 import org.junit.*;
 
-public class PubnubTestCase
+public class PubnubFunctionalJavaTestCase
 {
     private final String CHANNEL = "cc_channel";
     // TODO doesn't preserve chars first two chars
 //    private final String TEST_VALUE = "Hello World! --> ɂ顶@#$%^&*()!";
     private final String TEST_VALUE = "Hello World!";
 
-    private PubnubCloudConnector connector;
+    private PubNubCloudConnector connector;
     private ObjectMapper mapper = new ObjectMapper();
 
 
@@ -26,7 +26,7 @@ public class PubnubTestCase
     public void init()
     {
         //Using the PubNub demo account for testing
-        connector = new PubnubCloudConnector("demo", "demo", "");
+        connector = new PubNubCloudConnector("demo", "demo", "");
     }
 
     @Test

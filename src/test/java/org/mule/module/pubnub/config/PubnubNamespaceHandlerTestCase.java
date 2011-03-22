@@ -3,7 +3,7 @@
  */
 package org.mule.module.pubnub.config;
 
-import org.mule.module.pubnub.PubnubCloudConnector;
+import org.mule.module.pubnub.PubNubCloudConnector;
 import org.mule.tck.FunctionalTestCase;
 
 public class PubnubNamespaceHandlerTestCase extends FunctionalTestCase
@@ -19,8 +19,8 @@ public class PubnubNamespaceHandlerTestCase extends FunctionalTestCase
 
         Object o = muleContext.getRegistry().lookupObject("pubnub");
         assertNotNull(o);
-        assertTrue(o instanceof PubnubCloudConnector);
-        PubnubCloudConnector cc = (PubnubCloudConnector)o;
+        assertTrue(o instanceof PubNubCloudConnector);
+        PubNubCloudConnector cc = (PubNubCloudConnector)o;
         assertEquals("demo", cc.getPublishKey());
         assertEquals("demo", cc.getSubscribeKey());
         assertEquals("", cc.getSecretKey());
