@@ -104,7 +104,7 @@ Guice
 To use PubNub from Guice you need to create a Provider that can be used to inject an instance of PubNub.  There are two ways
 of doing this:
 
-# Stand-alone provider
+#3 Stand-alone provider
 
 This is its own class that can be injected using the standard @Inject or binding annotations in Guice:
 
@@ -116,7 +116,7 @@ This is its own class that can be injected using the standard @Inject or binding
         }
     }
 
-# @Provides Annotation
+#3 @Provides Annotation
 
 Guice allows you to create provider methods inside a Module, the method needs the @Provides annotation:
 
