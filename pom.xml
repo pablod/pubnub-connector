@@ -183,6 +183,28 @@
             <version>1.3</version>
         </dependency>
 
+        <!-- Testing with different Langs and Frameworks -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>3.0.5.RELEASE</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.guiceyfruit</groupId>
+            <artifactId>guice-all</artifactId>
+            <version>2.0</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy-all</artifactId>
+            <version>1.8.0-beta-3</version>
+            <scope>test</scope>
+        </dependency>
+
         <!-- for testing -->
         <dependency>
             <groupId>junit</groupId>

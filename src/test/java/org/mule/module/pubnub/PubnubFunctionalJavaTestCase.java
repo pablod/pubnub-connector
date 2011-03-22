@@ -18,31 +18,29 @@ public class PubnubFunctionalJavaTestCase
 //    private final String TEST_VALUE = "Hello World! --> ɂ顶@#$%^&*()!";
     private final String TEST_VALUE = "Hello World!";
 
-    private PubNubCloudConnector connector;
-    private ObjectMapper mapper = new ObjectMapper();
-
+    private PubNubCloudConnector pubnub;
 
     @Before
     public void init()
     {
         //Using the PubNub demo account for testing
-        connector = new PubNubCloudConnector("demo", "demo", "");
+        pubnub = new PubNubCloudConnector("demo", "demo", "");
     }
 
     @Test
     public void time()
     {
         //Not sure how to use this value
-        double time = connector.serverTime();
+        double time = pubnub.serverTime();
         Assert.assertFalse("Did not receive a valid server time value", time == 0);
     }
 
     @Test
     public void publish()
     {
-        ObjectNode msg = mapper.createObjectNode();
+        ObjectNode msg = pubnub.createMessage();
         msg.put("some_val", TEST_VALUE);
-        JsonNode info = connector.publish(CHANNEL, msg);
+        JsonNode info = pubnub.publish(CHANNEL, msg);
         Assert.assertEquals("TODO what is this value", 1, info.get(0).getIntValue());
         Assert.assertEquals("TODO what is this code", "D", info.get(1).getTextValue()); //TODO what are the return codes?
     }
@@ -52,7 +50,7 @@ public class PubnubFunctionalJavaTestCase
     {
         int limit = 1;
         // Get History
-        JsonNode response = connector.history(CHANNEL, limit);
+        JsonNode response = pubnub.history(CHANNEL, limit);
         // Print Response from PubNub JSONP REST Service
         Assert.assertEquals("There is only one history entry on this channel, the message should have been the same as the last publish",
                 TEST_VALUE, response.get(0).get("some_val").getTextValue());
@@ -83,18 +81,18 @@ public class PubnubFunctionalJavaTestCase
             {
                 // Listen for Messages (Subscribe)
                 pubLatch.release();
-                connector.subscribe(CHANNEL, callback);
+                pubnub.subscribe(CHANNEL, callback);
             }
         });
 
         t.start();
         Assert.assertTrue("Subscriber was not registered in a separate thread", pubLatch.await(5, TimeUnit.SECONDS));
 
-        ObjectNode msg = mapper.createObjectNode();
+        ObjectNode msg = pubnub.createMessage();
         msg.put("hello", "you");
 
 
-        connector.publish(CHANNEL, msg);
+        pubnub.publish(CHANNEL, msg);
         Assert.assertTrue("Message was not received on channel: " + CHANNEL, latch.await(15, TimeUnit.SECONDS));
     }
 
@@ -115,7 +113,7 @@ public class PubnubFunctionalJavaTestCase
                 // Listen for Messages (Subscribe)
                 pubLatch.release();
                 long start = System.currentTimeMillis();
-                JsonNode response = connector.request(CHANNEL, 5000L);
+                JsonNode response = pubnub.request(CHANNEL, 5000L);
                 System.out.println("Request: " + response);
                 System.out.println("Elapsed time: " + (System.currentTimeMillis() - start));
                 if (response==null)
@@ -134,11 +132,11 @@ public class PubnubFunctionalJavaTestCase
             Assert.fail(errorMessage.toString());
         }
 
-        ObjectNode msg = mapper.createObjectNode();
+        ObjectNode msg = pubnub.createMessage();
         msg.put("hello", "me");
 
 
-        connector.publish(CHANNEL, msg);
+        pubnub.publish(CHANNEL, msg);
 
         System.out.println("published");
 
