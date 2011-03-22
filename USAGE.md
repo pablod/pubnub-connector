@@ -1,7 +1,9 @@
+# PubNub connector Usage
+
 Mule cloud connectors can be used from different frameworks or using plain old Java.
 
-Java
-----
+## Java
+
 First create the PubNub cloud connector
 
     PubnubCloudConnector pubnub = new PubnubCloudConnector("publishKey", "subscribeKey", "secretKey");
@@ -37,9 +39,9 @@ To subscribe any messages from a channel called 'test':
     pubnub.subscribe("test", listener);
 
 
-Mule
-----
-IN Mule you can use Cloud connectors in Mule Xml configuration.  To do so, you need to add the schema for the cloud
+## Mule
+
+In Mule you can use Cloud connectors in Mule Xml configuration.  To do so, you need to add the schema for the cloud
 connector you want to use:
 
     <mule xmlns="http://www.mulesoft.org/schema/mule/core"
@@ -79,8 +81,7 @@ To publish messages, use the publish tag:
         <pubnub:publish channel="mule-test-result"/>
     </flow>
 
-Spring
-------
+## Spring
 
 In Spring or Mule the PubNub cloud connector can be configured as a Spring bean and injected into your code:
 
@@ -99,12 +100,12 @@ In Spring or Mule the PubNub cloud connector can be configured as a Spring bean 
 
 Now you can get the PubNub connector from the Spring application context.
 
-Guice
------
+## Guice
+
 To use PubNub from Guice you need to create a Provider that can be used to inject an instance of PubNub.  There are two ways
 of doing this:
 
-#3 Stand-alone provider
+### Stand-alone provider
 
 This is its own class that can be injected using the standard @Inject or binding annotations in Guice:
 
@@ -116,7 +117,7 @@ This is its own class that can be injected using the standard @Inject or binding
         }
     }
 
-#3 @Provides Annotation
+### @Provides Annotation
 
 Guice allows you to create provider methods inside a Module, the method needs the @Provides annotation:
 
@@ -134,8 +135,8 @@ Guice allows you to create provider methods inside a Module, the method needs th
         }
     }
 
-Groovy
-------
+## Groovy
+
 Using the PubNub connector from Groovy is very similar to using Java:
 
     void testPubSub()
@@ -170,7 +171,17 @@ using:
           new groovy.json.JsonBuilder([hello : "world"]).toString());
     }
 
-JavaScript (Server-Side)
-------------------------
+## JavaScript (Server-Side)
+
+TODO
+
+## Mule Query Language
+
+TODO
+
+## Pinata (AIAB)
+
+TODO
+
 
 
