@@ -14,14 +14,18 @@ Mule cloud connectors can be used from different frameworks or using plain old J
 
 Java
 ----
+First create the PubNub cloud connector
+
     PubnubCloudConnector pubnub = new PubnubCloudConnector("publishKey", "subscribeKey", "secretKey");
 
-    //Publish a message to a channel called 'test'
+To publish a message to a channel called 'test':
+
     ObjectNode message = pubnub.createMessage();
     message.put("hello", "world");
     pubnub.publish("test", message);
 
-    //Request any messages from a channel called 'test' with a time out of 5000 milliseconds
+To request any messages from a channel called 'test' within a timelimit of 5000 milliseconds:
+
     JsonNode response = pubnub.request("test", 5000L);
     if(response!=null) {
         //At least one message was received before the timeout
@@ -30,7 +34,8 @@ Java
         }
     }
 
-    //Subscribe any messages from a channel called 'test' with a time out of 5000 milliseconds
+To subscribe any messages from a channel called 'test':
+
     MessageListener listener = new MessageListener() {
         public boolean onMessage(JsonNode message) {
              //do something with the message
@@ -42,7 +47,6 @@ Java
     }
     //This is a blocking call
     pubnub.subscribe("test", listener);
-
 
 Mule
 ----
