@@ -34,7 +34,7 @@ import org.codehaus.jackson.node.ObjectNode;
  * plans for higher volume usage.  For more information go to PubNub: http://pubnub.com
  */
 @Connector(namespacePrefix = "pubnub")
-public class PubnubCloudConnector
+public class PubNubCloudConnector
 {
     public static final int MESSAGE_LIMIT = 1800;
 
@@ -75,7 +75,7 @@ public class PubnubCloudConnector
      * Creates a new PubNub connector with no state.  If this constructor is used, then you must
      * also call {@link #config(String, String, String, boolean)}
      */
-    public PubnubCloudConnector()
+    public PubNubCloudConnector()
     {
     }
 
@@ -89,7 +89,7 @@ public class PubnubCloudConnector
      * @param secretKey    The secret key given to you when you created the account
      * @param ssl          Whether to use SSL or not when communicating with the PubNub cloud
      */
-    public PubnubCloudConnector(String publishKey, String subscribeKey, String secretKey, boolean ssl)
+    public PubNubCloudConnector(String publishKey, String subscribeKey, String secretKey, boolean ssl)
     {
         this.publishKey = publishKey;
         this.subscribeKey = subscribeKey;
@@ -107,7 +107,7 @@ public class PubnubCloudConnector
      * @param subscribeKey Your subscribe key that allows you to send data to the PubNub cloud
      * @param secretKey    The secret key given to you when you created the account
      */
-    public PubnubCloudConnector(String publishKey, String subscribeKey, String secretKey)
+    public PubNubCloudConnector(String publishKey, String subscribeKey, String secretKey)
     {
         this.publishKey = publishKey;
         this.subscribeKey = subscribeKey;
