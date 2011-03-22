@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mule xmlns="http://www.mulesoft.org/schema/mule/core"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:pubnub="http://www.mulesoft.org/schema/mule/pubnub"
+      xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/3.1/mule.xsd
+                          http://www.mulesoft.org/schema/mule/pubnub http://www.mulesoft.org/schema/mule/pubnub/1.0-SNAPSHOT/mule-pubnub.xsd">
+
+    <pubnub:config publishKey="demo" subscribeKey="demo" secretKey="" name="pubnub"/>
+
+    <flow name="theFlow">
+        <poll frequency="5000">
+            <pubnub:request channel="mule-test" timeout="5000"/>
+        </poll>
+        <logger level="WARN" message="EVENT RECEIVED: #[payload]"/>
+        <append-string-transformer message=" Received"/>
+        <pubnub:publish channel="mule-test-result"/>
+    </flow>
+
+</mule>
