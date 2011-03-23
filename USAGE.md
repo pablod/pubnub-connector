@@ -6,7 +6,7 @@ Mule cloud connectors can be used from different frameworks or using plain old J
 
 First create the PubNub cloud connector
 
-    PubnubCloudConnector pubnub = new PubnubCloudConnector("publishKey", "subscribeKey", "secretKey");
+    PubNubCloudConnector pubnub = new PubNubCloudConnector("publishKey", "subscribeKey", "secretKey");
 
 To publish a message to a channel called 'test':
 
