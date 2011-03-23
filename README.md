@@ -1,11 +1,8 @@
-Mule pubnub Cloud Connector
+Mule PubNub Cloud Connector
 ===========================
 
-PubNub is an Internet-Wide Messaging Service for Real-time Web and Mobile apps and games. PubNub is a massively
-scalable Real-time Bidirectional Messaging Service in the Cloud.
-
-This connector supports version 3 of the PubNub REST API. PubNub is a freemium service where users get 5,000
-messages per day for free.  For more information go to PubNub: http://pubnub.com
+PubNub is an Internet-Wide Messaging Service for Real-time Web and Mobile apps and games. PubNub is a massively scalable Real-time Bidirectional Messaging Service in the Cloud.
+        This connector supports version 3 of the PubNub REST API. PubNub is a freemium service where users get 5,000 messages per day for free.  For more information go to PubNub: http://pubnub.com
 
 Installation
 ------------
@@ -36,7 +33,7 @@ Add the connector's maven repo to your pom.xml:
     </repositories>
 
 Add the connector as a dependency to your project. This can be done by adding
-the following under the <dependencies> element in the pom.xml file of the
+the following under the dependencies element in the pom.xml file of the
 application:
 
     <dependency>
@@ -50,32 +47,31 @@ Configuration
 
 You can configure the connector as follows:
 
-    <pubnub:config/>
+    <pubnub:config publishKey="value" subscribeKey="value" secretKey="value" ssl="value"/>
 
 Here is detailed list of all the configuration attributes:
 
 | attribute | description | optional | default value |
 |:-----------|:-----------|:---------|:--------------|
 |name|Give a name to this configuration so it can be later referenced by config-ref.|yes||
+|publishKey|Your publish key that allows you to send data to the PubNub cloud|no|
+|subscribeKey|Your subscribe key that allows you to send data to the PubNub cloud|no|
+|secretKey|The secret key given to you when you created the account|no|
+|ssl|Whether to use SSL or not when communicating with the PubNub cloud|yes|
 
 
 
 
 
-Config
-------
 
-Prepare PubNub connector state. The keys required to create the connector are available from
-your account on the PubNub website: http://www.pubnub.com/account.
-SSL can be used by setting the SSL flag.
 
-| attribute | description | optional | default value | possible values |
-|:-----------|:-----------|:---------|:--------------|:----------------|
-|config-ref|Specify which configuration to use for this invocation|yes||
-|publishKey| Your publish key that allows you to send data to the PubNub cloud|no||
-|subscribeKey| Your subscribe key that allows you to send data to the PubNub cloud|no||
-|secretKey| The secret key given to you when you created the account|no||
-|ssl| Whether to use SSL or not when communicating with the PubNub cloud|no||
+
+
+
+
+
+
+
 
 
 Publish
@@ -86,9 +82,20 @@ Send a json message to a channel.
 | attribute | description | optional | default value | possible values |
 |:-----------|:-----------|:---------|:--------------|:----------------|
 |config-ref|Specify which configuration to use for this invocation|yes||
-|channel| name to publish the message to|no||
-|jsonMessage| the message to publish|no||
+|channel|     name to publish the message to|no||
+|jsonMessage| the message to publish|yes|#[payload]|
 
+
+Request
+-------
+
+Makes a blocking request to receive a message on a channel.
+
+| attribute | description | optional | default value | possible values |
+|:-----------|:-----------|:---------|:--------------|:----------------|
+|config-ref|Specify which configuration to use for this invocation|yes||
+|channel| name to read from|no||
+|timeout| how long to wait for a message. The value is expressed in milliseconds. specify for|yes|5000|
 
 History
 -------
@@ -101,14 +108,15 @@ Load history from a channel.
 |channel| name.|no||
 |limit|   history count response.|no||
 
-Time
-----
+Server Time
+-----------
 
 Get the Timestamp from PubNub Cloud.
 
 | attribute | description | optional | default value | possible values |
 |:-----------|:-----------|:---------|:--------------|:----------------|
 |config-ref|Specify which configuration to use for this invocation|yes||
+
 
 
 

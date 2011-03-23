@@ -159,8 +159,8 @@ Using the PubNub connector from Groovy is very similar to using Java:
       assert result.get(0).equals(msg)
     }
 
-Note that for Json manipulation we are using Jackson (the result of pubnub.createMessage() is
-an ObjectNode) In Groovy 1.8 there is now builder support for JSON, so message create can be done
+Note that for Json manipulation cloud connectors use Jackson (the result of pubnub.createMessage() is
+an ObjectNode). In Groovy 1.8 there will be a JSON builder, so message create can be done
 using:
 
     void testPubSubGroovyJson()
@@ -171,17 +171,6 @@ using:
           new groovy.json.JsonBuilder([hello : "world"]).toString());
     }
 
-## JavaScript (Server-Side)
-
-TODO
-
-## Mule Query Language
-
-TODO
-
-## Pinata (AIAB)
-
-TODO
 
 
 
