@@ -2,7 +2,8 @@ Mule PubNub Cloud Connector
 ===========================
 
 PubNub is an Internet-Wide Messaging Service for Real-time Web and Mobile apps and games. PubNub is a massively scalable Real-time Bidirectional Messaging Service in the Cloud.
-        This connector supports version 3 of the PubNub REST API. PubNub is a freemium service where users get 5,000 messages per day for free.  For more information go to PubNub: http://pubnub.com
+
+This connector supports version 3 of the PubNub REST API. PubNub is a freemium service where users get 5,000 messages per day for free.  For more information go to PubNub: http://pubnub.com
 
 Installation
 ------------
