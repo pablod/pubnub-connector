@@ -14,7 +14,7 @@ import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.node.ObjectNode;
 import org.junit.Assert;
 
-public class PubnubFunctionalXMLTestCase extends FunctionalTestCase
+public class PubnubFunctionalMuleXMLTestCase extends FunctionalTestCase
 {
     @Override
     protected String getConfigResources()
@@ -44,6 +44,9 @@ public class PubnubFunctionalXMLTestCase extends FunctionalTestCase
                 return false;
             }
         };
+
+        //We need to to subscribe and publish in different threads since PubNub is not a queuing
+        //system, so messages are only received to subscribers who are actively listening
         Thread t = new Thread(new Runnable()
         {
             @Override

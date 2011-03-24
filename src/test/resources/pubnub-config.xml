@@ -5,14 +5,25 @@
       xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/3.1/mule.xsd
                           http://www.mulesoft.org/schema/mule/pubnub http://www.mulesoft.org/schema/mule/pubnub/1.0-SNAPSHOT/mule-pubnub.xsd">
 
+    <description>
+        This creates a PubNub connector instance and makes it available in the
+        Mule registry and usable by other pubnub: elements
+    </description>
+
     <pubnub:config publishKey="demo" subscribeKey="demo" secretKey="" name="pubnub"/>
 
     <flow name="theFlow">
+        <description>
+            This flow will grab a batch of messages from the 'mule-test' channel on PubNub
+            and then pass each one into the rest of the flow.  We log the payload before
+            publishing the same messages on the 'mule-test-result' channel.
+        </description>
+
         <poll frequency="5000">
             <pubnub:request channel="mule-test" timeout="5000"/>
         </poll>
-        <logger level="WARN" message="EVENT RECEIVED: #[payload]"/>
-        <append-string-transformer message=" Received"/>
+        <logger level="INFO" message="EVENT RECEIVED on mule-test: #[payload]"/>
+
         <pubnub:publish channel="mule-test-result"/>
     </flow>
 

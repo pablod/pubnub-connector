@@ -73,6 +73,8 @@ public class PubnubFunctionalJavaTestCase
             }
         };
 
+        //We need to to subscribe and publish in different threads since PubNub is not a queuing
+        //system, so messages are only received to subscribers who are actively listening
         final Latch pubLatch = new Latch();
         Thread t = new Thread(new Runnable()
         {
@@ -86,6 +88,8 @@ public class PubnubFunctionalJavaTestCase
         });
 
         t.start();
+        //We wait for the thread to start before publishing a message. This ensures that our
+        //subscribe is listening before the message is published
         Assert.assertTrue("Subscriber was not registered in a separate thread", pubLatch.await(5, TimeUnit.SECONDS));
 
         ObjectNode msg = pubnub.createMessage();
@@ -110,12 +114,12 @@ public class PubnubFunctionalJavaTestCase
             @Override
             public void run()
             {
+                long timeout = 5000;
                 // Listen for Messages (Subscribe)
                 pubLatch.release();
                 long start = System.currentTimeMillis();
-                JsonNode response = pubnub.request(CHANNEL, 5000L);
-                System.out.println("Request: " + response);
-                System.out.println("Elapsed time: " + (System.currentTimeMillis() - start));
+
+                JsonNode response = pubnub.request(CHANNEL, timeout);
                 if (response==null)
                 {
                     errorMessage.append("We should have received one message on the channel");

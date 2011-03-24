@@ -11,7 +11,11 @@ import org.mule.module.pubnub.PubNubCloudConnector;
 import com.google.inject.AbstractModule;
 import com.google.inject.Provides;
 
-
+/**
+ * This is a code example of how to use the PubNub connector from a Guice module
+ * IMPORTANT: If anything changes in this class you need yo update the USAGE.md to
+ * reflect the change in usage
+ */
 public class PubNubExampleModule extends AbstractModule
 {
     protected void configure()

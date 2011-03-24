@@ -3,6 +3,11 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <description>
+        THis creates a PubNub connector instance and makes it available in the
+        Spring context so that it can be injected into other objects
+    </description>
+
     <bean name="pubnubConnector" class="org.mule.module.pubnub.PubNubCloudConnector">
         <property name="publishKey" value="demo"/>
         <property name="subscribeKey" value="demo"/>
