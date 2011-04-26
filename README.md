@@ -40,7 +40,7 @@ application:
     <dependency>
         <groupId>org.mule.modules</groupId>
         <artifactId>mule-module-pubnub</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>1.0</version>
     </dependency>
 
 Configuration

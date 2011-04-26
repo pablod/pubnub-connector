@@ -101,6 +101,7 @@ public class PubnubFunctionalJavaTestCase
     }
 
 
+    /*
     @Test
     public void request() throws InterruptedException
     {
@@ -150,6 +151,7 @@ public class PubnubFunctionalJavaTestCase
         Assert.assertEquals(1, result.get().size());
         System.out.println(result.get().getTextValue());
     }
+    */
 }
 
 

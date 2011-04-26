@@ -48,7 +48,7 @@ connector you want to use:
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xmlns:pubnub="http://www.mulesoft.org/schema/mule/pubnub"
           xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/3.1/mule.xsd
-                              http://www.mulesoft.org/schema/mule/pubnub http://www.mulesoft.org/schema/mule/pubnub/1.0-SNAPSHOT/mule-pubnub.xsd">
+                              http://www.mulesoft.org/schema/mule/pubnub http://www.mulesoft.org/schema/mule/pubnub/1.0/mule-pubnub.xsd">
 
         <!-- Add configuration and flows here -->
 
