@@ -236,7 +236,7 @@ This connector supports version 3 of the PubNub REST API. PubNub is a freemium s
         <repository>
             <id>muleforge-release</id>
             <name>MuleForge Release Repository</name>
-            <url>http://repository.muleforge.org/release/</url>
+            <url>http://repository.mulesoft.org/releases/</url>
             <layout>default</layout>
         </repository>
         <repository>
@@ -267,7 +267,7 @@ This connector supports version 3 of the PubNub REST API. PubNub is a freemium s
         <pluginRepository>
             <id>muleforge-plugin-release</id>
             <name>MuleForge Release Repository</name>
-            <url>http://repository.muleforge.org/release/</url>
+            <url>http://repository.mulesoft.org/releases/</url>
             <layout>default</layout>
         </pluginRepository>
     </pluginRepositories>
@@ -276,12 +276,12 @@ This connector supports version 3 of the PubNub REST API. PubNub is a freemium s
         <repository>
             <id>muleforge-releases</id>
             <name>MuleForge Repository</name>
-            <url>dav:https://repository.muleforge.org/release/</url>
+            <url>https://repository.mulesoft.org/releases/</url>
         </repository>
         <snapshotRepository>
             <id>muleforge-snapshots</id>
             <name>MuleForge Snapshot Repository</name>
-            <url>dav:https://repository.muleforge.org/snapshot/</url>
+            <url>https://repository.mulesoft.org/snapshots/</url>
             <uniqueVersion>false</uniqueVersion>
         </snapshotRepository>
     </distributionManagement>
