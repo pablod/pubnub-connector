@@ -28,7 +28,7 @@ Add the connector's maven repo to your pom.xml:
         <repository>
             <id>muleforge-releases</id>
             <name>MuleForge Repository</name>
-            <url>https://repository.muleforge.org/release/</url>
+            <url>https://repository.mulesoft.org/releases/</url>
             <layout>default</layout>
         </repsitory>
     </repositories>
@@ -80,6 +80,12 @@ Publish
 
 Send a json message to a channel.
 
+
+
+    
+    <pubnub:publish channel="mychannel" jsonMessage="world"/>
+    
+
 | attribute | description | optional | default value | possible values |
 |:-----------|:-----------|:---------|:--------------|:----------------|
 |config-ref|Specify which configuration to use for this invocation|yes||
@@ -92,6 +98,12 @@ Request
 
 Makes a blocking request to receive a message on a channel.
 
+
+
+    
+    <pubnub:request channel="mychannel"/>
+    
+
 | attribute | description | optional | default value | possible values |
 |:-----------|:-----------|:---------|:--------------|:----------------|
 |config-ref|Specify which configuration to use for this invocation|yes||
@@ -103,6 +115,12 @@ History
 
 Load history from a channel.
 
+
+
+    
+    <pubnub:history channel="mychannel" limit="20"/>
+    
+
 | attribute | description | optional | default value | possible values |
 |:-----------|:-----------|:---------|:--------------|:----------------|
 |config-ref|Specify which configuration to use for this invocation|yes||
@@ -113,6 +131,12 @@ Server Time
 -----------
 
 Get the Timestamp from PubNub Cloud.
+
+
+
+    
+    <pubnub:server-time/>
+    
 
 | attribute | description | optional | default value | possible values |
 |:-----------|:-----------|:---------|:--------------|:----------------|

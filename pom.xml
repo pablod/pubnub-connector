@@ -87,6 +87,29 @@ This connector supports version 3 of the PubNub REST API. PubNub is a freemium s
                     <appendAssemblyId>false</appendAssemblyId>
                 </configuration>
             </plugin>
+
+			<plugin>
+                <artifactId>maven-source-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 
@@ -285,4 +308,12 @@ This connector supports version 3 of the PubNub REST API. PubNub is a freemium s
             <uniqueVersion>false</uniqueVersion>
         </snapshotRepository>
     </distributionManagement>
+
+    <scm>
+        <connection>scm:git:git://github.com:mulesoft/pubnub-connector.git</connection>
+        <developerConnection>
+            scm:git:git@github.com:mulesoft/pubnub-connector.git
+        </developerConnection>
+        <url>http://github.com/mulesoft/pubnub-connector</url>
+    </scm>
 </project>

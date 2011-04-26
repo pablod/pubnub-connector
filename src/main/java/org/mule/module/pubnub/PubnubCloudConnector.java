@@ -194,6 +194,10 @@ public class PubNubCloudConnector
     /**
      * Send a json message to a channel.
      *
+     * {@code
+     * <pubnub:publish channel="mychannel" jsonMessage="world"/>
+     * }
+     *
      * @param channel     name to publish the message to
      * @param jsonMessage the message to publish
      * @return boolean false on fail.
@@ -252,6 +256,10 @@ public class PubNubCloudConnector
 
     /**
      * Makes a blocking request to receive a message on a channel.
+     *
+     * {@code
+     * <pubnub:request channel="mychannel"/>
+     * }
      *
      * @param channel name to read from
      * @param timeout how long to wait for a message. The value is expressed in milliseconds. specify for
@@ -343,6 +351,10 @@ public class PubNubCloudConnector
     /**
      * Load history from a channel.
      *
+     * {@code
+     * <pubnub:history channel="mychannel" limit="20"/>
+     * }
+     *
      * @param channel name.
      * @param limit   history count response.
      * @return JsonNode of history.
@@ -363,6 +375,10 @@ public class PubNubCloudConnector
 
     /**
      * Get the Timestamp from PubNub Cloud.
+     *
+     * {@code
+     * <pubnub:server-time/>
+     * }
      *
      * @return double timestamp.
      */
