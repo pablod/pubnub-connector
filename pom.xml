@@ -5,7 +5,7 @@
     <artifactId>mule-module-pubnub</artifactId>
     <packaging>cloud-connector</packaging>
     <name>Mule PubNub Cloud Connector</name>
-    <version>1.0</version>
+    <version>1.1-SNAPSHOT</version>
     <description>
 PubNub is an Internet-Wide Messaging Service for Real-time Web and Mobile apps and games. PubNub is a massively scalable Real-time Bidirectional Messaging Service in the Cloud.
 
