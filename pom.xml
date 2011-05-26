@@ -274,6 +274,12 @@ This connector supports version 3 of the PubNub REST API. PubNub is a freemium s
             <name>Java.net Repository for Maven</name>
             <url>http://download.java.net/maven/2/</url>
         </repository>
+		<repository>
+			<id>jboss</id>
+			<name>JBoss Repository</name>
+			<url>http://repository.jboss.com</url>
+			<layout>default</layout>
+		</repository>
     </repositories>
 
     <pluginRepositories>
