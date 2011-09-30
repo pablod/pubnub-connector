@@ -32,7 +32,7 @@ import java.util.List;
  * plans for higher volume usage.  For more information go to PubNub: http://pubnub.com
  */
 @Module(name = "pubnub")
-public class PubNubCloudConnector {
+public class PubnubCloudConnector {
 
     public static final int MESSAGE_LIMIT = 1800;
     private static final String ORIGIN = "pubsub.pubnub.com";
@@ -72,7 +72,7 @@ public class PubNubCloudConnector {
      * Creates a new PubNub connector with no state.  If this constructor is used, then you must
      * also call {@link #config(String, String, String, boolean)}
      */
-    public PubNubCloudConnector() {
+    public PubnubCloudConnector() {
     }
 
     /**
@@ -85,7 +85,7 @@ public class PubNubCloudConnector {
      * @param secretKey    The secret key given to you when you created the account
      * @param ssl          Whether to use SSL or not when communicating with the PubNub cloud
      */
-    public PubNubCloudConnector(String publishKey, String subscribeKey, String secretKey, boolean ssl) {
+    public PubnubCloudConnector(String publishKey, String subscribeKey, String secretKey, boolean ssl) {
         this.publishKey = publishKey;
         this.subscribeKey = subscribeKey;
         this.secretKey = secretKey;
@@ -102,7 +102,7 @@ public class PubNubCloudConnector {
      * @param subscribeKey Your subscribe key that allows you to send data to the PubNub cloud
      * @param secretKey    The secret key given to you when you created the account
      */
-    public PubNubCloudConnector(String publishKey, String subscribeKey, String secretKey) {
+    public PubnubCloudConnector(String publishKey, String subscribeKey, String secretKey) {
         this.publishKey = publishKey;
         this.subscribeKey = subscribeKey;
         this.secretKey = secretKey;

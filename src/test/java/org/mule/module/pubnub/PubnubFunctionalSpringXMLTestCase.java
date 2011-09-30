@@ -12,17 +12,17 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 // specifies the Spring configuration to load for this test fixture
-@ContextConfiguration(locations={"/pubnub-spring-config.xml"})
-public class PubnubFunctionalSpringXMLTestCase
-{
+@ContextConfiguration(locations = {"/pubnub-spring-config.xml"})
+public class PubnubFunctionalSpringXMLTestCase {
 
 
     // this instance will be dependency injected by type
     @Autowired
-    private PubNubCloudConnector pubnub;
+    private PubnubCloudConnector pubnub;
 
     /**
      * We just test the config because we already test the PubNub connector functionality in another test
+     *
      * @throws Exception
      */
     @Test

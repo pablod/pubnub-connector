@@ -15,12 +15,12 @@ public class PubnubFunctionalJavaTestCase {
 //    private final String TEST_VALUE = "Hello World! --> ɂ顶@#$%^&*()!";
     private final String TEST_VALUE = "Hello World!";
 
-    private PubNubCloudConnector pubnub;
+    private PubnubCloudConnector pubnub;
 
     @Before
     public void init() {
         //Using the PubNub demo account for testing
-        pubnub = new PubNubCloudConnector("demo", "demo", "");
+        pubnub = new PubnubCloudConnector("demo", "demo", "");
     }
 
     @Test

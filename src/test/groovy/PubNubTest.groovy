@@ -1,33 +1,31 @@
-class PubNubTest extends GroovyTestCase
-{
-  void testPubSub()
-  {
-    def pubnub = new org.mule.module.pubnub.PubNubCloudConnector("demo", "demo", "");
-    def result = null;
+class PubNubTest extends GroovyTestCase {
+    void testPubSub() {
+        def pubnub = new org.mule.module.pubnub.PubnubCloudConnector("demo", "demo", "");
+        def result = null;
 
-    //We need to perform the publish and request in different threads; PubNub is not a queuing system
+        //We need to perform the publish and request in different threads; PubNub is not a queuing system
 
-    Thread.start {
-      result = pubnub.request("mule-test", 5000L);
+        Thread.start {
+            result = pubnub.request("mule-test", 5000L);
+        }
+
+        //need to wait for the thread to start
+        Thread.sleep(1000);
+        def msg = pubnub.createMessage();
+        msg.put("hello", "world");
+        pubnub.publish("mule-test", msg);
+
+        assert result != null
+        assert result.get(0).equals(msg)
     }
 
-    //need to wait for the thread to start
-    Thread.sleep(1000);
-    def msg = pubnub.createMessage();
-    msg.put("hello", "world");
-    pubnub.publish("mule-test", msg);
-
-    assert result != null
-    assert result.get(0).equals(msg)
-  }
-
 //  void testPubSubGroovyJson()
-//  {
-//    def pubnub = new org.mule.module.pubnub.PubNubCloudConnector("demo", "demo", "");
-//
-//    pubnub.publish("mule-test",
-//            new groovy.json.JsonBuilder([hello: "world"]).toString());
-//  }
+    //  {
+    //    def pubnub = new org.mule.module.pubnub.PubNubCloudConnector("demo", "demo", "");
+    //
+    //    pubnub.publish("mule-test",
+    //            new groovy.json.JsonBuilder([hello: "world"]).toString());
+    //  }
 }
 
 //Note that there is a Json builder as part of the forthcoming Groovy 1.8 and can be used to build more complex messages easily
