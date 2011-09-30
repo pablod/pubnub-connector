@@ -3,27 +3,23 @@
  */
 package org.mule.module.pubnub;
 
-import org.mule.tck.FunctionalTestCase;
-import org.mule.util.concurrent.Latch;
-
-import java.util.concurrent.atomic.AtomicReference;
-
-import edu.emory.mathcs.backport.java.util.concurrent.TimeUnit;
 import org.codehaus.jackson.JsonNode;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.node.ObjectNode;
 import org.junit.Assert;
+import org.mule.tck.FunctionalTestCase;
+import org.mule.util.concurrent.Latch;
 
-public class PubnubFunctionalMuleXMLTestCase extends FunctionalTestCase
-{
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicReference;
+
+public class PubnubFunctionalMuleXMLTestCase extends FunctionalTestCase {
     @Override
-    protected String getConfigResources()
-    {
+    protected String getConfigResources() {
         return "pubnub-config.xml";
     }
 
-    public void testPubNubConfig()throws Exception
-    {
+    public void testPubNubConfig() throws Exception {
 
         final PubNubCloudConnector cc = new PubNubCloudConnector("demo", "demo", "");
         cc.init();
@@ -31,11 +27,9 @@ public class PubnubFunctionalMuleXMLTestCase extends FunctionalTestCase
         final AtomicReference<JsonNode> result = new AtomicReference<JsonNode>();
         final Latch latch = new Latch();
         // Callback Interface when a Message is Received
-        final MessageListener callback = new MessageListener()
-        {
+        final MessageListener callback = new MessageListener() {
             @Override
-            public boolean onMessage(JsonNode message)
-            {
+            public boolean onMessage(JsonNode message) {
                 // Print Received Message
                 System.out.println("Subscribed Message received: " + message);
                 result.set(message);
@@ -47,11 +41,9 @@ public class PubnubFunctionalMuleXMLTestCase extends FunctionalTestCase
 
         //We need to to subscribe and publish in different threads since PubNub is not a queuing
         //system, so messages are only received to subscribers who are actively listening
-        Thread t = new Thread(new Runnable()
-        {
+        Thread t = new Thread(new Runnable() {
             @Override
-            public void run()
-            {
+            public void run() {
                 // Listen for Messages (Subscribe)
                 cc.subscribe("mule-test-result", callback);
             }

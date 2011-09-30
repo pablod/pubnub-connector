@@ -6,24 +6,21 @@ package org.mule.module.pubnub.config;
 import org.mule.module.pubnub.PubNubCloudConnector;
 import org.mule.tck.FunctionalTestCase;
 
-public class PubnubNamespaceHandlerTestCase extends FunctionalTestCase
-{
+public class PubnubNamespaceHandlerTestCase extends FunctionalTestCase {
     @Override
-    protected String getConfigResources()
-    {
+    protected String getConfigResources() {
         return "pubnub-config.xml";
     }
 
-    public void testPubNubConfig()throws Exception
-    {
+    public void testPubNubConfig() throws Exception {
 
         Object o = muleContext.getRegistry().lookupObject("pubnub");
         assertNotNull(o);
         assertTrue(o instanceof PubNubCloudConnector);
-        PubNubCloudConnector cc = (PubNubCloudConnector)o;
+        PubNubCloudConnector cc = (PubNubCloudConnector) o;
         assertEquals("demo", cc.getPublishKey());
         assertEquals("demo", cc.getSubscribeKey());
-        assertEquals("", cc.getSecretKey());
+        assertEquals("secretKey", cc.getSecretKey());
         assertFalse(cc.isSsl());
     }
 

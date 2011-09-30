@@ -3,13 +3,17 @@
  */
 package org.mule.module.pubnub;
 
-import org.mule.tools.cloudconnect.annotations.Connector;
-import org.mule.tools.cloudconnect.annotations.Operation;
-import org.mule.tools.cloudconnect.annotations.Parameter;
-import org.mule.tools.cloudconnect.annotations.Property;
-
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.WebResource;
+import org.codehaus.jackson.JsonNode;
+import org.codehaus.jackson.map.ObjectMapper;
+import org.codehaus.jackson.node.ObjectNode;
+import org.mule.api.annotations.Configurable;
+import org.mule.api.annotations.Module;
+import org.mule.api.annotations.Processor;
+import org.mule.api.annotations.lifecycle.Start;
+import org.mule.api.annotations.param.Default;
+import org.mule.api.annotations.param.Optional;
 
 import java.math.BigInteger;
 import java.security.MessageDigest;
@@ -17,12 +21,6 @@ import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-
-import javax.annotation.PostConstruct;
-
-import org.codehaus.jackson.JsonNode;
-import org.codehaus.jackson.map.ObjectMapper;
-import org.codehaus.jackson.node.ObjectNode;
 
 /**
  * PubNub is an Internet-Wide Messaging Service for Real-time Web and Mobile apps and games. PubNub
@@ -33,11 +31,10 @@ import org.codehaus.jackson.node.ObjectNode;
  * PubNub is a freemium service where users get 5,000 messages per day for free but then have reasonable pricing
  * plans for higher volume usage.  For more information go to PubNub: http://pubnub.com
  */
-@Connector(namespacePrefix = "pubnub")
-public class PubNubCloudConnector
-{
-    public static final int MESSAGE_LIMIT = 1800;
+@Module(name = "pubnub")
+public class PubNubCloudConnector {
 
+    public static final int MESSAGE_LIMIT = 1800;
     private static final String ORIGIN = "pubsub.pubnub.com";
 
     private String originUrl;
@@ -45,38 +42,37 @@ public class PubNubCloudConnector
     /**
      * Your publish key that allows you to send data to the PubNub cloud
      */
-    @Property
+    @Configurable
     private String publishKey;
 
     /**
      * Your subscribe key that allows you to send data to the PubNub cloud
      */
-    @Property
+    @Configurable
     private String subscribeKey;
 
     /**
      * The secret key given to you when you created the account
      */
-    @Property
+    @Configurable
     private String secretKey;
 
     /**
      * Whether to use SSL or not when communicating with the PubNub cloud
      */
-    @Property(optional = true, defaultValue = "false")
+    @Configurable
+    @Optional
+    @Default("false")
     private boolean ssl;
 
     private Client httpClient = Client.create();
     private ObjectMapper mapper = new ObjectMapper();
-    ;
-
 
     /**
      * Creates a new PubNub connector with no state.  If this constructor is used, then you must
      * also call {@link #config(String, String, String, boolean)}
      */
-    public PubNubCloudConnector()
-    {
+    public PubNubCloudConnector() {
     }
 
     /**
@@ -89,8 +85,7 @@ public class PubNubCloudConnector
      * @param secretKey    The secret key given to you when you created the account
      * @param ssl          Whether to use SSL or not when communicating with the PubNub cloud
      */
-    public PubNubCloudConnector(String publishKey, String subscribeKey, String secretKey, boolean ssl)
-    {
+    public PubNubCloudConnector(String publishKey, String subscribeKey, String secretKey, boolean ssl) {
         this.publishKey = publishKey;
         this.subscribeKey = subscribeKey;
         this.secretKey = secretKey;
@@ -107,8 +102,7 @@ public class PubNubCloudConnector
      * @param subscribeKey Your subscribe key that allows you to send data to the PubNub cloud
      * @param secretKey    The secret key given to you when you created the account
      */
-    public PubNubCloudConnector(String publishKey, String subscribeKey, String secretKey)
-    {
+    public PubNubCloudConnector(String publishKey, String subscribeKey, String secretKey) {
         this.publishKey = publishKey;
         this.subscribeKey = subscribeKey;
         this.secretKey = secretKey;
@@ -116,49 +110,40 @@ public class PubNubCloudConnector
     }
 
 
-    public String getPublishKey()
-    {
+    public String getPublishKey() {
         return publishKey;
     }
 
-    public void setPublishKey(String publishKey)
-    {
+    public void setPublishKey(String publishKey) {
         this.publishKey = publishKey;
     }
 
-    public String getSubscribeKey()
-    {
+    public String getSubscribeKey() {
         return subscribeKey;
     }
 
-    public void setSubscribeKey(String subscribeKey)
-    {
+    public void setSubscribeKey(String subscribeKey) {
         this.subscribeKey = subscribeKey;
     }
 
-    public String getSecretKey()
-    {
+    public String getSecretKey() {
         return secretKey;
     }
 
-    public void setSecretKey(String secretKey)
-    {
+    public void setSecretKey(String secretKey) {
         this.secretKey = secretKey;
     }
 
-    public boolean isSsl()
-    {
+    public boolean isSsl() {
         return ssl;
     }
 
-    public void setSsl(boolean ssl)
-    {
+    public void setSsl(boolean ssl) {
         this.ssl = ssl;
     }
 
-    @PostConstruct
-    public void init()
-    {
+    @Start
+    public void init() {
         this.originUrl = "http" + (ssl ? "s://" : "://") + ORIGIN;
         httpClient = Client.create();
         mapper = new ObjectMapper();
@@ -167,10 +152,8 @@ public class PubNubCloudConnector
         httpClient.setConnectTimeout(1000 * 10);
     }
 
-    protected String getBaseUrl()
-    {
-        if (originUrl == null)
-        {
+    protected String getBaseUrl() {
+        if (originUrl == null) {
             originUrl = "http" + (ssl ? "s://" : "://") + ORIGIN;
             //Work around because there is no lifecycle support
             httpClient.setReadTimeout(1000 * 60);
@@ -186,14 +169,13 @@ public class PubNubCloudConnector
      * @param jsonMessage the message to publish
      * @return the response from the server
      */
-    public JsonNode publish(String channel, JsonNode jsonMessage)
-    {
+    public JsonNode publish(String channel, JsonNode jsonMessage) {
         return publish(channel, jsonMessage.toString());
     }
 
     /**
      * Send a json message to a channel.
-     *
+     * <p/>
      * {@code
      * <pubnub:publish channel="mychannel" jsonMessage="world"/>
      * }
@@ -202,13 +184,11 @@ public class PubNubCloudConnector
      * @param jsonMessage the message to publish
      * @return boolean false on fail.
      */
-    @Operation
-    public JsonNode publish(String channel, @Parameter(optional = true, defaultValue = "#[payload]") String jsonMessage)
-    {
+    @Processor
+    public JsonNode publish(String channel, String jsonMessage) {
         // Generate String to Sign
         String signature = "0";
-        if (this.secretKey.length() > 0)
-        {
+        if (this.secretKey.length() > 0) {
             StringBuilder string_to_sign = new StringBuilder();
             string_to_sign
                     .append(this.publishKey)
@@ -249,14 +229,13 @@ public class PubNubCloudConnector
      * @param listener the message callback to invoke when a message is received. there will be one invocation
      *                 per message and the invocation on the message listener is guaranteed never to be null.
      */
-    public void subscribe(String channel, MessageListener listener)
-    {
+    public void subscribe(String channel, MessageListener listener) {
         this.doSubscribe(channel, listener, "0");
     }
 
     /**
      * Makes a blocking request to receive a message on a channel.
-     *
+     * <p/>
      * {@code
      * <pubnub:request channel="mychannel"/>
      * }
@@ -265,27 +244,23 @@ public class PubNubCloudConnector
      * @param timeout how long to wait for a message. The value is expressed in milliseconds. specify for
      * @return zero or more messages depending on what was in the queue
      */
-    @Operation
-    public JsonNode request(String channel, @Parameter(optional = true, defaultValue = "5000") final long timeout)
-    {
+    @Processor
+    public JsonNode request(String channel, @Optional @Default("5000") final long timeout) {
         // Build URL
         String timetoken = "0";
         List<String> url = java.util.Arrays.asList("subscribe", this.subscribeKey, channel, "0", timetoken);
 
         long start = System.currentTimeMillis();
-        do
-        {
+        do {
             // Wait for Message
             JsonNode response = doRequest(url);
 
             JsonNode messages = response.get(0);
-            if (messages.size() > 0)
-            {
+            if (messages.size() > 0) {
                 return messages;
             }
             // Update TimeToken
-            if (response.get(1).getTextValue().length() > 0)
-            {
+            if (response.get(1).getTextValue().length() > 0) {
                 timetoken = response.get(1).getTextValue();
                 url = java.util.Arrays.asList("subscribe", this.subscribeKey, channel, "0", timetoken);
             }
@@ -298,14 +273,11 @@ public class PubNubCloudConnector
      * @param channel   name to subscribe to
      * @param listener  callback for messages received
      * @param timetoken the time since the last read from the server. This value is usually sent with a result
-     * from the subscribe RESt method on the server.
+     *                  from the subscribe RESt method on the server.
      */
-    private void doSubscribe(String channel, MessageListener listener, String timetoken)
-    {
-        while (true)
-        {
-            try
-            {
+    private void doSubscribe(String channel, MessageListener listener, String timetoken) {
+        while (true) {
+            try {
                 // Build URL
                 List<String> url = java.util.Arrays.asList(
                         "subscribe", this.subscribeKey, channel, "0", timetoken
@@ -317,31 +289,23 @@ public class PubNubCloudConnector
                 JsonNode messages = response.get(0);
 
                 // Update TimeToken
-                if (response.get(1).getTextValue().length() > 0)
-                {
+                if (response.get(1).getTextValue().length() > 0) {
                     timetoken = response.get(1).getTextValue();
                 }
 
 
                 // Run user Callback and Reconnect if user permits. If
                 // there's a timeout then messages.length() == 0.
-                for (int i = 0; messages.size() > i; i++)
-                {
+                for (int i = 0; messages.size() > i; i++) {
                     JsonNode message = messages.get(i);
-                    if (!listener.onMessage(message))
-                    {
+                    if (!listener.onMessage(message)) {
                         return;
                     }
                 }
-            }
-            catch (Exception e)
-            {
-                try
-                {
+            } catch (Exception e) {
+                try {
                     Thread.sleep(1000);
-                }
-                catch (InterruptedException ignored)
-                {
+                } catch (InterruptedException ignored) {
                 }
             }
         }
@@ -350,7 +314,7 @@ public class PubNubCloudConnector
 
     /**
      * Load history from a channel.
-     *
+     * <p/>
      * {@code
      * <pubnub:history channel="mychannel" limit="20"/>
      * }
@@ -359,9 +323,8 @@ public class PubNubCloudConnector
      * @param limit   history count response.
      * @return JsonNode of history.
      */
-    @Operation
-    public JsonNode history(String channel, int limit)
-    {
+    @Processor
+    public JsonNode history(String channel, int limit) {
         List<String> url = new ArrayList<String>();
 
         url.add("history");
@@ -375,16 +338,15 @@ public class PubNubCloudConnector
 
     /**
      * Get the Timestamp from PubNub Cloud.
-     *
+     * <p/>
      * {@code
      * <pubnub:server-time/>
      * }
      *
      * @return double timestamp.
      */
-    @Operation
-    public double serverTime()
-    {
+    @Processor
+    public double serverTime() {
         List<String> url = new ArrayList<String>();
 
         url.add("time");
@@ -397,10 +359,10 @@ public class PubNubCloudConnector
     /**
      * Creates a new Json Object message. The {@link org.codehaus.jackson.node.ObjectNode} can be used like a Map
      * to write key/value pairs.  Objects can be text, numeric, binary or complex objects
+     *
      * @return a newly created {@link org.codehaus.jackson.node.ObjectNode} instance.
      */
-    public ObjectNode createMessage()
-    {
+    public ObjectNode createMessage() {
         return mapper.createObjectNode();
     }
 
@@ -410,99 +372,77 @@ public class PubNubCloudConnector
      * @param urlParts List<String> request of url directories.
      * @return JSONArray from JSON response.
      */
-    private JsonNode doRequest(List<String> urlParts)
-    {
+    private JsonNode doRequest(List<String> urlParts) {
         StringBuilder url = new StringBuilder();
         Iterator url_iterator = urlParts.iterator();
 
         url.append(getBaseUrl());
 
         // Generate URL with UTF-8 Encoding
-        while (url_iterator.hasNext())
-        {
-            try
-            {
+        while (url_iterator.hasNext()) {
+            try {
                 String url_bit = (String) url_iterator.next();
                 url.append("/").append(_encodeURIcomponent(url_bit));
-            }
-            catch (Exception e)
-            {
+            } catch (Exception e) {
                 return createResponse("Failed UTF-8 Encoding URL.");
             }
         }
 
         // Fail if string too long
-        if (url.length() > MESSAGE_LIMIT)
-        {
+        if (url.length() > MESSAGE_LIMIT) {
             return createResponse("Message too long");
         }
 
-        try
-        {
+        try {
             WebResource webResource = httpClient.resource(url.toString());
             String response = webResource.get(String.class);
             return mapper.readTree(response);
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             return createResponse("Failed JSONP HTTP Request.");
         }
     }
 
-    private JsonNode createResponse(String message)
-    {
+    private JsonNode createResponse(String message) {
         ObjectNode nd = mapper.createObjectNode();
         nd.arrayNode().add(message);
         return nd;
     }
 
-    private String _encodeURIcomponent(String s)
-    {
+    private String _encodeURIcomponent(String s) {
         StringBuilder o = new StringBuilder();
-        for (char ch : s.toCharArray())
-        {
-            if (isUnsafe(ch))
-            {
+        for (char ch : s.toCharArray()) {
+            if (isUnsafe(ch)) {
                 o.append('%');
                 o.append(toHex(ch / 16));
                 o.append(toHex(ch % 16));
-            }
-            else
-            {
+            } else {
                 o.append(ch);
             }
         }
         return o.toString();
     }
 
-    private char toHex(int ch)
-    {
+    private char toHex(int ch) {
         return (char) (ch < 10 ? '0' + ch : 'A' + ch - 10);
     }
 
-    private boolean isUnsafe(char ch)
-    {
+    private boolean isUnsafe(char ch) {
         return " ~`!@#$%^&*()+=[]\\{}|;':\",./<>?".indexOf(ch) >= 0;
     }
 
-    private String md5(String input)
-    {
-        try
-        {
+    private String md5(String input) {
+        try {
             MessageDigest md = MessageDigest.getInstance("MD5");
             byte[] messageDigest = md.digest(input.getBytes());
             BigInteger number = new BigInteger(1, messageDigest);
             String hashtext = number.toString(16);
 
-            while (hashtext.length() < 32)
-            {
+            while (hashtext.length() < 32) {
                 hashtext = "0" + hashtext;
             }
 
             return hashtext;
-        }
-        catch (NoSuchAlgorithmException e)
-        {
+        } catch (NoSuchAlgorithmException e) {
             throw new RuntimeException(e);
         }
     }

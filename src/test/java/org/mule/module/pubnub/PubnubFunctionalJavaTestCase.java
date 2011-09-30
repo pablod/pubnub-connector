@@ -1,18 +1,15 @@
 package org.mule.module.pubnub;
 
-import org.mule.util.concurrent.Latch;
-
-import java.util.concurrent.atomic.AtomicReference;
-
-import edu.emory.mathcs.backport.java.util.concurrent.TimeUnit;
 import org.codehaus.jackson.JsonNode;
-import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.node.ObjectNode;
 import org.junit.Assert;
-import org.junit.*;
+import org.junit.Before;
+import org.junit.Test;
+import org.mule.util.concurrent.Latch;
 
-public class PubnubFunctionalJavaTestCase
-{
+import java.util.concurrent.TimeUnit;
+
+public class PubnubFunctionalJavaTestCase {
     private final String CHANNEL = "cc_channel";
     // TODO doesn't preserve chars first two chars
 //    private final String TEST_VALUE = "Hello World! --> ɂ顶@#$%^&*()!";
@@ -21,23 +18,20 @@ public class PubnubFunctionalJavaTestCase
     private PubNubCloudConnector pubnub;
 
     @Before
-    public void init()
-    {
+    public void init() {
         //Using the PubNub demo account for testing
         pubnub = new PubNubCloudConnector("demo", "demo", "");
     }
 
     @Test
-    public void time()
-    {
+    public void time() {
         //Not sure how to use this value
         double time = pubnub.serverTime();
         Assert.assertFalse("Did not receive a valid server time value", time == 0);
     }
 
     @Test
-    public void publish()
-    {
+    public void publish() {
         ObjectNode msg = pubnub.createMessage();
         msg.put("some_val", TEST_VALUE);
         JsonNode info = pubnub.publish(CHANNEL, msg);
@@ -46,8 +40,7 @@ public class PubnubFunctionalJavaTestCase
     }
 
     @Test
-    public void history()
-    {
+    public void history() {
         int limit = 1;
         // Get History
         JsonNode response = pubnub.history(CHANNEL, limit);
@@ -57,15 +50,12 @@ public class PubnubFunctionalJavaTestCase
     }
 
     @Test
-    public void subscribe() throws InterruptedException
-    {
+    public void subscribe() throws InterruptedException {
         final Latch latch = new Latch();
         // Callback Interface when a Message is Received
-        final MessageListener callback = new MessageListener()
-        {
+        final MessageListener callback = new MessageListener() {
             @Override
-            public boolean onMessage(JsonNode message)
-            {
+            public boolean onMessage(JsonNode message) {
                 // Print Received Message
                 System.out.println("Subscribed Message received: " + message);
                 latch.release();
@@ -76,11 +66,9 @@ public class PubnubFunctionalJavaTestCase
         //We need to to subscribe and publish in different threads since PubNub is not a queuing
         //system, so messages are only received to subscribers who are actively listening
         final Latch pubLatch = new Latch();
-        Thread t = new Thread(new Runnable()
-        {
+        Thread t = new Thread(new Runnable() {
             @Override
-            public void run()
-            {
+            public void run() {
                 // Listen for Messages (Subscribe)
                 pubLatch.release();
                 pubnub.subscribe(CHANNEL, callback);
@@ -97,7 +85,7 @@ public class PubnubFunctionalJavaTestCase
 
 
         pubnub.publish(CHANNEL, msg);
-        Assert.assertTrue("Message was not received on channel: " + CHANNEL, latch.await(15, TimeUnit.SECONDS));
+        Assert.assertTrue("Message was not received on channel: " + CHANNEL, latch.await(30, TimeUnit.SECONDS));
     }
 
 
