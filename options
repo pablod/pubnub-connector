@@ -15,5 +15,11 @@
                         -hdf project.groupId "org.mule.modules"
                         -hdf project.version "1.2-SNAPSHOT"
                         -hdf project.name "Mule PubNub Cloud Connector"
+						-hdf project.repo.name "MuleSoft Repository"
+						-hdf project.repo.id "mulesoft-releases"
+						-hdf project.repo.url "https://repository.mulesoft.org/releases/"
+						-hdf project.snapshotRepo.name "MuleSoft Snapshot Repository"
+						-hdf project.snapshotRepo.id "mulesoft-snapshots"
+						-hdf project.snapshotRepo.url "https://repository.mulesoft.org/snapshots/"
                         -d /opt/j2ee/domains/mulesource.com/bamboo/webapps/atlassian-bamboo/data/atlassian-bamboo-3.0.3/xml-data/build-dir/MULECONTRIB-PUBNUB-JOB1/target/apidocs
                         -htmldir /opt/j2ee/domains/mulesource.com/bamboo/webapps/atlassian-bamboo/data/atlassian-bamboo-3.0.3/xml-data/build-dir/MULECONTRIB-PUBNUB-JOB1/doc
