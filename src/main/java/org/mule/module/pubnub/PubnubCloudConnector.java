@@ -176,9 +176,7 @@ public class PubnubCloudConnector {
     /**
      * Send a json message to a channel.
      * <p/>
-     * {@code
-     * <pubnub:publish channel="mychannel" jsonMessage="world"/>
-     * }
+     * {@sample.xml ../../../doc/mule-module-pubnub.xml.sample pubnub:publish}
      *
      * @param channel     name to publish the message to
      * @param jsonMessage the message to publish
@@ -236,9 +234,7 @@ public class PubnubCloudConnector {
     /**
      * Makes a blocking request to receive a message on a channel.
      * <p/>
-     * {@code
-     * <pubnub:request channel="mychannel"/>
-     * }
+     * {@sample.xml ../../../doc/mule-module-pubnub.xml.sample pubnub:request}
      *
      * @param channel name to read from
      * @param timeout how long to wait for a message. The value is expressed in milliseconds. specify for
@@ -315,9 +311,7 @@ public class PubnubCloudConnector {
     /**
      * Load history from a channel.
      * <p/>
-     * {@code
-     * <pubnub:history channel="mychannel" limit="20"/>
-     * }
+     * {@sample.xml ../../../doc/mule-module-pubnub.xml.sample pubnub:history}
      *
      * @param channel name.
      * @param limit   history count response.
@@ -339,9 +333,7 @@ public class PubnubCloudConnector {
     /**
      * Get the Timestamp from PubNub Cloud.
      * <p/>
-     * {@code
-     * <pubnub:server-time/>
-     * }
+     * {@sample.xml ../../../doc/mule-module-pubnub.xml.sample pubnub:server-time}
      *
      * @return double timestamp.
      */

@@ -1,0 +1,12 @@
+<!-- BEGIN_INCLUDE(pubnub:publish) -->
+<pubnub:publish channel="mychannel" jsonMessage="world"/>
+<!-- END_INCLUDE(pubnub:publish) -->
+<!-- BEGIN_INCLUDE(pubnub:request) -->
+<pubnub:request channel="mychannel"/>
+<!-- END_INCLUDE(pubnub:request) -->
+<!-- BEGIN_INCLUDE(pubnub:history) -->
+<pubnub:history channel="mychannel" limit="20"/>
+<!-- END_INCLUDE(pubnub:history) -->
+<!-- BEGIN_INCLUDE(pubnub:server-time) -->
+<pubnub:server-time/>
+<!-- END_INCLUDE(pubnub:server-time) -->
