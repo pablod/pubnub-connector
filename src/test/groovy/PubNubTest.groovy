@@ -1,6 +1,6 @@
 class PubNubTest extends GroovyTestCase {
     void testPubSub() {
-        def pubnub = new org.mule.module.pubnub.PubnubCloudConnector("demo", "demo", "");
+        def pubnub = new org.mule.module.pubnub.PubNubModule("demo", "demo", "");
         def result = null;
 
         //We need to perform the publish and request in different threads; PubNub is not a queuing system

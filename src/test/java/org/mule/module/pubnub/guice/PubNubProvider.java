@@ -8,15 +8,15 @@ package org.mule.module.pubnub.guice;/*
  * LICENSE.txt file.
  */
 
-import org.mule.module.pubnub.PubnubCloudConnector;
+import org.mule.module.pubnub.PubNubModule;
 
 /**
  * This is a code example of how to a PubNub connector Provider for Guice
  * IMPORTANT: If anything changes in this class you need yo update the USAGE.md to
  * reflect the change in usage
  */
-public class PubNubProvider implements com.google.inject.Provider<PubnubCloudConnector> {
-    public PubnubCloudConnector get() {
-        return new PubnubCloudConnector("demo", "demo", "");
+public class PubNubProvider implements com.google.inject.Provider<PubNubModule> {
+    public PubNubModule get() {
+        return new PubNubModule("demo", "demo", "");
     }
 }

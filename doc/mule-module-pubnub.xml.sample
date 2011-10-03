@@ -10,3 +10,6 @@
 <!-- BEGIN_INCLUDE(pubnub:server-time) -->
 <pubnub:server-time/>
 <!-- END_INCLUDE(pubnub:server-time) -->
+<!-- BEGIN_INCLUDE(pubnub:subscribe) -->
+<pubnub:subscribe channel="mychannel"/>
+<!-- END_INCLUDE(pubnub:subscribe) -->

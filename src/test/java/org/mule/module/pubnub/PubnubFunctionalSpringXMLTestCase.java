@@ -18,7 +18,7 @@ public class PubnubFunctionalSpringXMLTestCase {
 
     // this instance will be dependency injected by type
     @Autowired
-    private PubnubCloudConnector pubnub;
+    private PubNubModule pubnub;
 
     /**
      * We just test the config because we already test the PubNub connector functionality in another test

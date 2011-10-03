@@ -8,7 +8,7 @@ package org.mule.module.pubnub.guice;
 
 import com.google.inject.AbstractModule;
 import com.google.inject.Provides;
-import org.mule.module.pubnub.PubnubCloudConnector;
+import org.mule.module.pubnub.PubNubModule;
 
 /**
  * This is a code example of how to use the PubNub connector from a Guice module
@@ -21,7 +21,7 @@ public class PubNubExampleModule extends AbstractModule {
     }
 
     @Provides
-    public PubnubCloudConnector createPubNub() {
-        return new PubnubCloudConnector("demo", "demo", "");
+    public PubNubModule createPubNub() {
+        return new PubNubModule("demo", "demo", "");
     }
 }

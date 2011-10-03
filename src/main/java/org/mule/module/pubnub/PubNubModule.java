@@ -11,9 +11,13 @@ import org.codehaus.jackson.node.ObjectNode;
 import org.mule.api.annotations.Configurable;
 import org.mule.api.annotations.Module;
 import org.mule.api.annotations.Processor;
+import org.mule.api.annotations.Source;
 import org.mule.api.annotations.lifecycle.Start;
 import org.mule.api.annotations.param.Default;
 import org.mule.api.annotations.param.Optional;
+import org.mule.api.callback.SourceCallback;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.math.BigInteger;
 import java.security.MessageDigest;
@@ -32,10 +36,11 @@ import java.util.List;
  * plans for higher volume usage.  For more information go to PubNub: http://pubnub.com
  */
 @Module(name = "pubnub")
-public class PubnubCloudConnector {
+public class PubNubModule {
 
     public static final int MESSAGE_LIMIT = 1800;
     private static final String ORIGIN = "pubsub.pubnub.com";
+    private static Logger logger = LoggerFactory.getLogger(PubNubModule.class);
 
     private String originUrl;
 
@@ -72,7 +77,7 @@ public class PubnubCloudConnector {
      * Creates a new PubNub connector with no state.  If this constructor is used, then you must
      * also call {@link #config(String, String, String, boolean)}
      */
-    public PubnubCloudConnector() {
+    public PubNubModule() {
     }
 
     /**
@@ -85,7 +90,7 @@ public class PubnubCloudConnector {
      * @param secretKey    The secret key given to you when you created the account
      * @param ssl          Whether to use SSL or not when communicating with the PubNub cloud
      */
-    public PubnubCloudConnector(String publishKey, String subscribeKey, String secretKey, boolean ssl) {
+    public PubNubModule(String publishKey, String subscribeKey, String secretKey, boolean ssl) {
         this.publishKey = publishKey;
         this.subscribeKey = subscribeKey;
         this.secretKey = secretKey;
@@ -102,7 +107,7 @@ public class PubnubCloudConnector {
      * @param subscribeKey Your subscribe key that allows you to send data to the PubNub cloud
      * @param secretKey    The secret key given to you when you created the account
      */
-    public PubnubCloudConnector(String publishKey, String subscribeKey, String secretKey) {
+    public PubNubModule(String publishKey, String subscribeKey, String secretKey) {
         this.publishKey = publishKey;
         this.subscribeKey = subscribeKey;
         this.secretKey = secretKey;
@@ -216,6 +221,28 @@ public class PubnubCloudConnector {
         // Return JSONArray
         return doRequest(url);
     }
+
+    /**
+     * Listen for a message on a channel.
+     *
+     * {@sample.xml ../../../doc/mule-module-pubnub.xml.sample pubnub:subscribe}
+     *
+     * @param channel  name to listen on
+     */
+    @Source
+    public void subscribe(String channel, final SourceCallback callback) {
+        this.doSubscribe(channel, new MessageListener() {
+            public boolean onMessage(JsonNode message) {
+                try {
+                    callback.process(message);
+                } catch (Exception e) {
+                    logger.error(e.getMessage(), e);
+                }
+                return true;
+            }
+        }, "0");
+    }
+
 
     /**
      * Register a message listener for a channel.  This is a blocking subscribe which also means that only one

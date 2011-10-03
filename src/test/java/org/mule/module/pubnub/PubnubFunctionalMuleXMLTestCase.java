@@ -21,7 +21,7 @@ public class PubnubFunctionalMuleXMLTestCase extends FunctionalTestCase {
 
     public void testPubNubConfig() throws Exception {
 
-        final PubnubCloudConnector cc = new PubnubCloudConnector("demo", "demo", "");
+        final PubNubModule cc = new PubNubModule("demo", "demo", "");
         cc.init();
 
         final AtomicReference<JsonNode> result = new AtomicReference<JsonNode>();
