@@ -190,10 +190,11 @@
       <ul>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/pubnub/config/HistoryMessageProcessor.html">HistoryMessageProcessor</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/pubnub/config/PublishMessageProcessor.html">PublishMessageProcessor</a></li>
-          <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/pubnub/config/PubnubCloudConnectorCapabilitiesAdapter.html">PubnubCloudConnectorCapabilitiesAdapter</a></li>
-          <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/pubnub/config/PubnubCloudConnectorLifecycleAdapter.html">PubnubCloudConnectorLifecycleAdapter</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/pubnub/config/PubNubModuleCapabilitiesAdapter.html">PubNubModuleCapabilitiesAdapter</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/pubnub/config/PubNubModuleLifecycleAdapter.html">PubNubModuleLifecycleAdapter</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/pubnub/config/RequestMessageProcessor.html">RequestMessageProcessor</a></li>
           <li class="selected api apilevel-"><a href="../../../../../../java/org/mule/module/pubnub/config/ServerTimeMessageProcessor.html">ServerTimeMessageProcessor</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/pubnub/config/SubscribeMessageSource.html">SubscribeMessageSource</a></li>
       </ul>
     </li>
               
@@ -421,7 +422,7 @@ Summary:
 
 
 <h2>Class Overview</h2>
-<p>ServerTimeMessageProcessor invokes the <code><a href="../../../../../../java/org/mule/module/pubnub/PubnubCloudConnector.html#serverTime()">serverTime()</a></code> method in <code><a href="../../../../../../java/org/mule/module/pubnub/PubnubCloudConnector.html">PubnubCloudConnector</a></code>. For each argument there is a field in this processor to match it.  Before invoking the actual method the processor will evaluate and transform where possible to the expected argument type.
+<p>ServerTimeMessageProcessor invokes the <code><a href="../../../../../../java/org/mule/module/pubnub/PubNubModule.html#serverTime()">serverTime()</a></code> method in <code><a href="../../../../../../java/org/mule/module/pubnub/PubNubModule.html">PubNubModule</a></code>. For each argument there is a field in this processor to match it.  Before invoking the actual method the processor will evaluate and transform where possible to the expected argument type.
  
 </p>
 
@@ -644,7 +645,7 @@ org.mule.api.lifecycle.Stoppable
           private
           
           
-          <a href="../../../../../../java/org/mule/module/pubnub/config/PubnubCloudConnectorLifecycleAdapter.html">PubnubCloudConnectorLifecycleAdapter</a></nobr></td>
+          <a href="../../../../../../java/org/mule/module/pubnub/config/PubNubModuleLifecycleAdapter.html">PubNubModuleLifecycleAdapter</a></nobr></td>
           <td class="jd-linkcol"><a href="../../../../../../org/mule/module/pubnub/config/ServerTimeMessageProcessor.html#moduleObject">moduleObject</a></td>
           <td class="jd-descrcol" width="100%">Module object
  
@@ -802,7 +803,7 @@ org.mule.api.lifecycle.Stoppable
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/config/ServerTimeMessageProcessor.html#setModuleObject(org.mule.module.pubnub.config.PubnubCloudConnectorLifecycleAdapter)">setModuleObject</a></span>(<a href="../../../../../../java/org/mule/module/pubnub/config/PubnubCloudConnectorLifecycleAdapter.html">PubnubCloudConnectorLifecycleAdapter</a> moduleObject)</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/config/ServerTimeMessageProcessor.html#setModuleObject(org.mule.module.pubnub.config.PubNubModuleLifecycleAdapter)">setModuleObject</a></span>(<a href="../../../../../../java/org/mule/module/pubnub/config/PubNubModuleLifecycleAdapter.html">PubNubModuleLifecycleAdapter</a> moduleObject)</nobr>
         
         <div class="jd-descrdiv">Sets the instance of the object under which the processor will execute</div>
   
@@ -1473,7 +1474,7 @@ From interface
         private 
          
          
-        <a href="../../../../../../java/org/mule/module/pubnub/config/PubnubCloudConnectorLifecycleAdapter.html">PubnubCloudConnectorLifecycleAdapter</a>
+        <a href="../../../../../../java/org/mule/module/pubnub/config/PubNubModuleLifecycleAdapter.html">PubNubModuleLifecycleAdapter</a>
       </span>
         moduleObject
     </h4>
@@ -1777,7 +1778,7 @@ From interface
 </div>
 
 
-<A NAME="setModuleObject(org.mule.module.pubnub.config.PubnubCloudConnectorLifecycleAdapter)"></A>
+<A NAME="setModuleObject(org.mule.module.pubnub.config.PubNubModuleLifecycleAdapter)"></A>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -1790,7 +1791,7 @@ From interface
         void
       </span>
       <span class="sympad">setModuleObject</span>
-      <span class="normal">(<a href="../../../../../../java/org/mule/module/pubnub/config/PubnubCloudConnectorLifecycleAdapter.html">PubnubCloudConnectorLifecycleAdapter</a> moduleObject)</span>
+      <span class="normal">(<a href="../../../../../../java/org/mule/module/pubnub/config/PubNubModuleLifecycleAdapter.html">PubNubModuleLifecycleAdapter</a> moduleObject)</span>
     </h4>
       <div class="api-level">
         <div>

@@ -73,7 +73,7 @@
 <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico" />
 <title>
 
-  PubnubCloudConnector
+  PubNubModule
 
 
 | Mule PubNub Cloud Connector
@@ -171,6 +171,8 @@ Summary:
 
   &#124; <a href="#promethods">Message Processors</a>
 
+
+  &#124; <a href="#soumethods">Message Sources</a>
 
 
 </div><!-- end sum-details-links -->
@@ -312,6 +314,25 @@ Summary:
 </table>
 
 
+
+
+<!-- ========== MESSAGE SOURCE SUMMARY =========== -->
+<table id="soumethods" class="jd-sumtable"><tr><th colspan="12">Message Sources</th></tr>
+
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../mule/pubnub.html#subscribe">&lt;pubnub:subscribe&gt;</a></nobr>
+        
+        <div class="jd-descrdiv">Listen for a message on a channel.<br/></div>
+        
+  </td></tr>
+
+
+
+</table>
 
 
 
@@ -677,6 +698,79 @@ specify which configuration to use.</p>
 
 <!-- ========= MESSAGE SOURCES DETAIL ======== -->
 <!-- Message Processors -->
+
+<h2>Message Sources</h2>
+
+
+
+<A NAME="subscribe"></A>
+
+<div class="jd-details api apilevel-">
+    <h4 class="jd-details-title">
+      <span class="sympad">&lt;pubnub:subscribe&gt;</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Listen for a message on a channel.
+
+ <br/><div class="jd-tagdata"><h5 class="jd-tagtitle">XML Sample</h5><pre>&lt;pubnub:subscribe channel="mychannel"/&gt;</pre></div></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Attributes</h5>
+
+      <table class="jd-tagtable">
+      <td class="jd-linkcol"><nobr>config-ref</nobr></td>
+      <td class="jd-descrcol"></td>
+      <td class="jd-descrcol" width="100%"><i>Optional.&nbsp;</i>Specify which configuration to use.</td></tr>
+          
+          
+            
+                
+                <tr class=" api apilevel-" >
+                    <td class="jd-linkcol"><nobr>channel</nobr></td>
+                    <td class="jd-descrcol"></td>
+                    <td class="jd-descrcol" width="100%">name to listen on
+<br/></td>
+                </tr>
+                
+                
+            
+          
+            
+                
+                <tr class="alt-color api apilevel-" >
+                    <td class="jd-linkcol"><nobr>callback</nobr></td>
+                    <td class="jd-descrcol"></td>
+                    <td class="jd-descrcol" width="100%"></td>
+                </tr>
+                
+                
+            
+          
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Child Elements</h5>
+
+      <table class="jd-tagtable">
+          
+          
+            
+          
+            
+          
+      </table>
+  </div>
+  
+
+    </div>
+</div>
+
+
 
 
 

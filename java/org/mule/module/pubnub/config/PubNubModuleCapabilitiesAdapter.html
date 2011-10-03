@@ -72,7 +72,7 @@
 <link rel="shortcut icon" type="image/x-icon" href="../../../../../../favicon.ico" />
 <title>
 
-  PubnubCloudConnectorCapabilitiesAdapter
+  PubNubModuleCapabilitiesAdapter
 
 
 | Mule PubNub Cloud Connector
@@ -190,10 +190,11 @@
       <ul>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/pubnub/config/HistoryMessageProcessor.html">HistoryMessageProcessor</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/pubnub/config/PublishMessageProcessor.html">PublishMessageProcessor</a></li>
-          <li class="selected api apilevel-"><a href="../../../../../../java/org/mule/module/pubnub/config/PubnubCloudConnectorCapabilitiesAdapter.html">PubnubCloudConnectorCapabilitiesAdapter</a></li>
-          <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/pubnub/config/PubnubCloudConnectorLifecycleAdapter.html">PubnubCloudConnectorLifecycleAdapter</a></li>
+          <li class="selected api apilevel-"><a href="../../../../../../java/org/mule/module/pubnub/config/PubNubModuleCapabilitiesAdapter.html">PubNubModuleCapabilitiesAdapter</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/pubnub/config/PubNubModuleLifecycleAdapter.html">PubNubModuleLifecycleAdapter</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/pubnub/config/RequestMessageProcessor.html">RequestMessageProcessor</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/pubnub/config/ServerTimeMessageProcessor.html">ServerTimeMessageProcessor</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/pubnub/config/SubscribeMessageSource.html">SubscribeMessageSource</a></li>
       </ul>
     </li>
               
@@ -316,7 +317,7 @@ Summary:
      
     
     class
-<h1>PubnubCloudConnectorCapabilitiesAdapter</h1>
+<h1>PubNubModuleCapabilitiesAdapter</h1>
 
 
 
@@ -325,7 +326,7 @@ Summary:
   
 
   
-    extends <a href="../../../../../../java/org/mule/module/pubnub/PubnubCloudConnector.html">PubnubCloudConnector</a><br/>
+    extends <a href="../../../../../../java/org/mule/module/pubnub/PubNubModule.html">PubNubModule</a><br/>
   
   
   
@@ -358,7 +359,7 @@ Summary:
         
             <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
         
-        <td colspan="2" class="jd-inheritance-class-cell"><a href="../../../../../../java/org/mule/module/pubnub/PubnubCloudConnector.html">org.mule.module.pubnub.PubnubCloudConnector</a></td>
+        <td colspan="2" class="jd-inheritance-class-cell"><a href="../../../../../../java/org/mule/module/pubnub/PubNubModule.html">org.mule.module.pubnub.PubNubModule</a></td>
     </tr>
     
 
@@ -368,7 +369,7 @@ Summary:
         
             <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
         
-        <td colspan="1" class="jd-inheritance-class-cell">org.mule.module.pubnub.config.PubnubCloudConnectorCapabilitiesAdapter</td>
+        <td colspan="1" class="jd-inheritance-class-cell">org.mule.module.pubnub.config.PubNubModuleCapabilitiesAdapter</td>
     </tr>
     
 
@@ -391,7 +392,7 @@ Summary:
               >
           
             
-              <a href="../../../../../../java/org/mule/module/pubnub/config/PubnubCloudConnectorLifecycleAdapter.html">PubnubCloudConnectorLifecycleAdapter</a>
+              <a href="../../../../../../java/org/mule/module/pubnub/config/PubNubModuleLifecycleAdapter.html">PubNubModuleLifecycleAdapter</a>
             
           
       </div>
@@ -400,8 +401,8 @@ Summary:
               >
   <table class="jd-sumtable-expando">
         <tr class="alt-color api apilevel-" >
-              <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/pubnub/config/PubnubCloudConnectorLifecycleAdapter.html">PubnubCloudConnectorLifecycleAdapter</a></td>
-              <td class="jd-descrcol" width="100%">A <code>PubnubCloudConnectorLifecycleAdapter</code> is a wrapper around <code><a href="../../../../../../java/org/mule/module/pubnub/PubnubCloudConnector.html">PubnubCloudConnector</a></code> that adds lifecycle methods to the pojo.&nbsp;</td>
+              <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/pubnub/config/PubNubModuleLifecycleAdapter.html">PubNubModuleLifecycleAdapter</a></td>
+              <td class="jd-descrcol" width="100%">A <code>PubNubModuleLifecycleAdapter</code> is a wrapper around <code><a href="../../../../../../java/org/mule/module/pubnub/PubNubModule.html">PubNubModule</a></code> that adds lifecycle methods to the pojo.&nbsp;</td>
           </tr>
   </table>
       </div>
@@ -415,7 +416,7 @@ Summary:
 
 
 <h2>Class Overview</h2>
-<p>A <code>PubnubCloudConnectorCapabilitiesAdapter</code> is a wrapper around <code><a href="../../../../../../java/org/mule/module/pubnub/PubnubCloudConnector.html">PubnubCloudConnector</a></code> that implements org.mule.api.Capabilities interface.
+<p>A <code>PubNubModuleCapabilitiesAdapter</code> is a wrapper around <code><a href="../../../../../../java/org/mule/module/pubnub/PubNubModule.html">PubNubModule</a></code> that implements org.mule.api.Capabilities interface.
  
 </p>
 
@@ -469,30 +470,30 @@ Summary:
 <tr class="api apilevel-" >
 <td colspan="12">
 
-  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-constants-org.mule.module.pubnub.PubnubCloudConnector" class="jd-expando-trigger closed"
-          ><img id="inherited-constants-org.mule.module.pubnub.PubnubCloudConnector-trigger"
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-constants-org.mule.module.pubnub.PubNubModule" class="jd-expando-trigger closed"
+          ><img id="inherited-constants-org.mule.module.pubnub.PubNubModule-trigger"
           src="../../../../../../assets/images/triangle-closed.png"
           class="jd-expando-trigger-img" /></a>From class
-<a href="../../../../../../org/mule/module/pubnub/PubnubCloudConnector.html">org.mule.module.pubnub.PubnubCloudConnector</a>
-<div id="inherited-constants-org.mule.module.pubnub.PubnubCloudConnector">
-  <div id="inherited-constants-org.mule.module.pubnub.PubnubCloudConnector-list"
+<a href="../../../../../../org/mule/module/pubnub/PubNubModule.html">org.mule.module.pubnub.PubNubModule</a>
+<div id="inherited-constants-org.mule.module.pubnub.PubNubModule">
+  <div id="inherited-constants-org.mule.module.pubnub.PubNubModule-list"
         class="jd-inheritedlinks">
   </div>
-  <div id="inherited-constants-org.mule.module.pubnub.PubnubCloudConnector-summary" style="display: none;">
+  <div id="inherited-constants-org.mule.module.pubnub.PubNubModule-summary" style="display: none;">
     <table class="jd-sumtable-expando">
     
 
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">int</td>
-        <td class="jd-linkcol"><a href="../../../../../../org/mule/module/pubnub/PubnubCloudConnector.html#MESSAGE_LIMIT">MESSAGE_LIMIT</a></td>
+        <td class="jd-linkcol"><a href="../../../../../../org/mule/module/pubnub/PubNubModule.html#MESSAGE_LIMIT">MESSAGE_LIMIT</a></td>
         <td class="jd-descrcol" width="100%"></td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol">String</td>
-        <td class="jd-linkcol"><a href="../../../../../../org/mule/module/pubnub/PubnubCloudConnector.html#ORIGIN">ORIGIN</a></td>
+        <td class="jd-linkcol"><a href="../../../../../../org/mule/module/pubnub/PubNubModule.html#ORIGIN">ORIGIN</a></td>
         <td class="jd-descrcol" width="100%"></td>
     </tr>
     
@@ -524,16 +525,16 @@ Summary:
 <tr class="api apilevel-" >
 <td colspan="12">
 
-  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-fields-org.mule.module.pubnub.PubnubCloudConnector" class="jd-expando-trigger closed"
-          ><img id="inherited-fields-org.mule.module.pubnub.PubnubCloudConnector-trigger"
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-fields-org.mule.module.pubnub.PubNubModule" class="jd-expando-trigger closed"
+          ><img id="inherited-fields-org.mule.module.pubnub.PubNubModule-trigger"
           src="../../../../../../assets/images/triangle-closed.png"
           class="jd-expando-trigger-img" /></a>From class
-<a href="../../../../../../org/mule/module/pubnub/PubnubCloudConnector.html">org.mule.module.pubnub.PubnubCloudConnector</a>
-<div id="inherited-fields-org.mule.module.pubnub.PubnubCloudConnector">
-  <div id="inherited-fields-org.mule.module.pubnub.PubnubCloudConnector-list"
+<a href="../../../../../../org/mule/module/pubnub/PubNubModule.html">org.mule.module.pubnub.PubNubModule</a>
+<div id="inherited-fields-org.mule.module.pubnub.PubNubModule">
+  <div id="inherited-fields-org.mule.module.pubnub.PubNubModule-list"
         class="jd-inheritedlinks">
   </div>
-  <div id="inherited-fields-org.mule.module.pubnub.PubnubCloudConnector-summary" style="display: none;">
+  <div id="inherited-fields-org.mule.module.pubnub.PubNubModule-summary" style="display: none;">
     <table class="jd-sumtable-expando">
     
 
@@ -544,29 +545,29 @@ Summary:
           
           
           Client</nobr></td>
-          <td class="jd-linkcol"><a href="../../../../../../org/mule/module/pubnub/PubnubCloudConnector.html#httpClient">httpClient</a></td>
+          <td class="jd-linkcol"><a href="../../../../../../org/mule/module/pubnub/PubNubModule.html#httpClient">httpClient</a></td>
           <td class="jd-descrcol" width="100%"></td>
       </tr>
       
     
       <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          static
+          
+          Logger</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../org/mule/module/pubnub/PubNubModule.html#logger">logger</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
           <td class="jd-typecol"><nobr>
           private
           
           
           ObjectMapper</nobr></td>
-          <td class="jd-linkcol"><a href="../../../../../../org/mule/module/pubnub/PubnubCloudConnector.html#mapper">mapper</a></td>
-          <td class="jd-descrcol" width="100%"></td>
-      </tr>
-      
-    
-      <tr class="alt-color api apilevel-" >
-          <td class="jd-typecol"><nobr>
-          private
-          
-          
-          String</nobr></td>
-          <td class="jd-linkcol"><a href="../../../../../../org/mule/module/pubnub/PubnubCloudConnector.html#originUrl">originUrl</a></td>
+          <td class="jd-linkcol"><a href="../../../../../../org/mule/module/pubnub/PubNubModule.html#mapper">mapper</a></td>
           <td class="jd-descrcol" width="100%"></td>
       </tr>
       
@@ -577,20 +578,43 @@ Summary:
           
           
           String</nobr></td>
-          <td class="jd-linkcol"><a href="../../../../../../org/mule/module/pubnub/PubnubCloudConnector.html#publishKey">publishKey</a></td>
+          <td class="jd-linkcol"><a href="../../../../../../org/mule/module/pubnub/PubNubModule.html#originUrl">originUrl</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          String</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../org/mule/module/pubnub/PubNubModule.html#publishKey">publishKey</a></td>
           <td class="jd-descrcol" width="100%">Your publish key that allows you to send data to the PubNub cloud
 </td>
       </tr>
       
     
-      <tr class="alt-color api apilevel-" >
+      <tr class=" api apilevel-" >
           <td class="jd-typecol"><nobr>
           private
           
           
           String</nobr></td>
-          <td class="jd-linkcol"><a href="../../../../../../org/mule/module/pubnub/PubnubCloudConnector.html#secretKey">secretKey</a></td>
+          <td class="jd-linkcol"><a href="../../../../../../org/mule/module/pubnub/PubNubModule.html#secretKey">secretKey</a></td>
           <td class="jd-descrcol" width="100%">The secret key given to you when you created the account
+</td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          boolean</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../org/mule/module/pubnub/PubNubModule.html#ssl">ssl</a></td>
+          <td class="jd-descrcol" width="100%">Whether to use SSL or not when communicating with the PubNub cloud
 </td>
       </tr>
       
@@ -600,20 +624,8 @@ Summary:
           private
           
           
-          boolean</nobr></td>
-          <td class="jd-linkcol"><a href="../../../../../../org/mule/module/pubnub/PubnubCloudConnector.html#ssl">ssl</a></td>
-          <td class="jd-descrcol" width="100%">Whether to use SSL or not when communicating with the PubNub cloud
-</td>
-      </tr>
-      
-    
-      <tr class="alt-color api apilevel-" >
-          <td class="jd-typecol"><nobr>
-          private
-          
-          
           String</nobr></td>
-          <td class="jd-linkcol"><a href="../../../../../../org/mule/module/pubnub/PubnubCloudConnector.html#subscribeKey">subscribeKey</a></td>
+          <td class="jd-linkcol"><a href="../../../../../../org/mule/module/pubnub/PubNubModule.html#subscribeKey">subscribeKey</a></td>
           <td class="jd-descrcol" width="100%">Your subscribe key that allows you to send data to the PubNub cloud
 </td>
       </tr>
@@ -650,7 +662,7 @@ Summary:
             </nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/config/PubnubCloudConnectorCapabilitiesAdapter.html#PubnubCloudConnectorCapabilitiesAdapter()">PubnubCloudConnectorCapabilitiesAdapter</a></span>()</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/config/PubNubModuleCapabilitiesAdapter.html#PubNubModuleCapabilitiesAdapter()">PubNubModuleCapabilitiesAdapter</a></span>()</nobr>
         
   </td></tr>
 
@@ -679,7 +691,7 @@ Summary:
             boolean</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/config/PubnubCloudConnectorCapabilitiesAdapter.html#isCapableOf(org.mule.api.Capability)">isCapableOf</a></span>(Capability capability)</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/config/PubNubModuleCapabilitiesAdapter.html#isCapableOf(org.mule.api.Capability)">isCapableOf</a></span>(Capability capability)</nobr>
         
         <div class="jd-descrdiv">Returns true if this module implements such capability
  
@@ -705,19 +717,19 @@ Summary:
 
 <tr class="api apilevel-" >
 <td colspan="12">
-  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-org.mule.module.pubnub.PubnubCloudConnector" class="jd-expando-trigger closed"
-          ><img id="inherited-methods-org.mule.module.pubnub.PubnubCloudConnector-trigger"
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-org.mule.module.pubnub.PubNubModule" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-org.mule.module.pubnub.PubNubModule-trigger"
           src="../../../../../../assets/images/triangle-closed.png"
           class="jd-expando-trigger-img" /></a>
 From class
 
-  <a href="../../../../../../org/mule/module/pubnub/PubnubCloudConnector.html">org.mule.module.pubnub.PubnubCloudConnector</a>
+  <a href="../../../../../../org/mule/module/pubnub/PubNubModule.html">org.mule.module.pubnub.PubNubModule</a>
 
-<div id="inherited-methods-org.mule.module.pubnub.PubnubCloudConnector">
-  <div id="inherited-methods-org.mule.module.pubnub.PubnubCloudConnector-list"
+<div id="inherited-methods-org.mule.module.pubnub.PubNubModule">
+  <div id="inherited-methods-org.mule.module.pubnub.PubNubModule-list"
         class="jd-inheritedlinks">
   </div>
-  <div id="inherited-methods-org.mule.module.pubnub.PubnubCloudConnector-summary" style="display: none;">
+  <div id="inherited-methods-org.mule.module.pubnub.PubNubModule-summary" style="display: none;">
     <table class="jd-sumtable-expando">
     
 
@@ -733,7 +745,7 @@ From class
             ObjectNode</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/PubnubCloudConnector.html#createMessage()">createMessage</a></span>()</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/PubNubModule.html#createMessage()">createMessage</a></span>()</nobr>
         
         <div class="jd-descrdiv">Creates a new Json Object message.</div>
   
@@ -751,7 +763,7 @@ From class
             String</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/PubnubCloudConnector.html#getBaseUrl()">getBaseUrl</a></span>()</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/PubNubModule.html#getBaseUrl()">getBaseUrl</a></span>()</nobr>
         
   </td></tr>
 
@@ -767,7 +779,7 @@ From class
             String</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/PubnubCloudConnector.html#getPublishKey()">getPublishKey</a></span>()</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/PubNubModule.html#getPublishKey()">getPublishKey</a></span>()</nobr>
         
   </td></tr>
 
@@ -783,7 +795,7 @@ From class
             String</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/PubnubCloudConnector.html#getSecretKey()">getSecretKey</a></span>()</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/PubNubModule.html#getSecretKey()">getSecretKey</a></span>()</nobr>
         
   </td></tr>
 
@@ -799,7 +811,7 @@ From class
             String</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/PubnubCloudConnector.html#getSubscribeKey()">getSubscribeKey</a></span>()</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/PubNubModule.html#getSubscribeKey()">getSubscribeKey</a></span>()</nobr>
         
   </td></tr>
 
@@ -815,7 +827,7 @@ From class
             JsonNode</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/PubnubCloudConnector.html#history(java.lang.String, int)">history</a></span>(String channel, int limit)</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/PubNubModule.html#history(java.lang.String, int)">history</a></span>(String channel, int limit)</nobr>
         
         <div class="jd-descrdiv">Load history from a channel.</div>
   
@@ -833,7 +845,7 @@ From class
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/PubnubCloudConnector.html#init()">init</a></span>()</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/PubNubModule.html#init()">init</a></span>()</nobr>
         
   </td></tr>
 
@@ -849,7 +861,7 @@ From class
             boolean</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/PubnubCloudConnector.html#isSsl()">isSsl</a></span>()</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/PubNubModule.html#isSsl()">isSsl</a></span>()</nobr>
         
   </td></tr>
 
@@ -865,7 +877,7 @@ From class
             JsonNode</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/PubnubCloudConnector.html#publish(java.lang.String, java.lang.String)">publish</a></span>(String channel, String jsonMessage)</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/PubNubModule.html#publish(java.lang.String, java.lang.String)">publish</a></span>(String channel, String jsonMessage)</nobr>
         
         <div class="jd-descrdiv">Send a json message to a channel.</div>
   
@@ -883,7 +895,7 @@ From class
             JsonNode</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/PubnubCloudConnector.html#publish(java.lang.String, org.codehaus.jackson.JsonNode)">publish</a></span>(String channel, JsonNode jsonMessage)</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/PubNubModule.html#publish(java.lang.String, org.codehaus.jackson.JsonNode)">publish</a></span>(String channel, JsonNode jsonMessage)</nobr>
         
         <div class="jd-descrdiv">Send a json message to a channel.</div>
   
@@ -901,7 +913,7 @@ From class
             JsonNode</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/PubnubCloudConnector.html#request(java.lang.String, long)">request</a></span>(String channel, long timeout)</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/PubNubModule.html#request(java.lang.String, long)">request</a></span>(String channel, long timeout)</nobr>
         
         <div class="jd-descrdiv">Makes a blocking request to receive a message on a channel.</div>
   
@@ -919,7 +931,7 @@ From class
             double</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/PubnubCloudConnector.html#serverTime()">serverTime</a></span>()</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/PubNubModule.html#serverTime()">serverTime</a></span>()</nobr>
         
         <div class="jd-descrdiv">Get the Timestamp from PubNub Cloud.</div>
   
@@ -937,7 +949,7 @@ From class
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/PubnubCloudConnector.html#setPublishKey(java.lang.String)">setPublishKey</a></span>(String publishKey)</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/PubNubModule.html#setPublishKey(java.lang.String)">setPublishKey</a></span>(String publishKey)</nobr>
         
   </td></tr>
 
@@ -953,7 +965,7 @@ From class
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/PubnubCloudConnector.html#setSecretKey(java.lang.String)">setSecretKey</a></span>(String secretKey)</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/PubNubModule.html#setSecretKey(java.lang.String)">setSecretKey</a></span>(String secretKey)</nobr>
         
   </td></tr>
 
@@ -969,7 +981,7 @@ From class
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/PubnubCloudConnector.html#setSsl(boolean)">setSsl</a></span>(boolean ssl)</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/PubNubModule.html#setSsl(boolean)">setSsl</a></span>(boolean ssl)</nobr>
         
   </td></tr>
 
@@ -985,7 +997,7 @@ From class
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/PubnubCloudConnector.html#setSubscribeKey(java.lang.String)">setSubscribeKey</a></span>(String subscribeKey)</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/PubNubModule.html#setSubscribeKey(java.lang.String)">setSubscribeKey</a></span>(String subscribeKey)</nobr>
         
   </td></tr>
 
@@ -1001,7 +1013,25 @@ From class
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/PubnubCloudConnector.html#subscribe(java.lang.String, org.mule.module.pubnub.MessageListener)">subscribe</a></span>(String channel, <a href="../../../../../../java/org/mule/module/pubnub/MessageListener.html">MessageListener</a> listener)</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/PubNubModule.html#subscribe(java.lang.String, org.mule.api.callback.SourceCallback)">subscribe</a></span>(String channel, SourceCallback callback)</nobr>
+        
+        <div class="jd-descrdiv">Listen for a message on a channel.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/PubNubModule.html#subscribe(java.lang.String, org.mule.module.pubnub.MessageListener)">subscribe</a></span>(String channel, <a href="../../../../../../java/org/mule/module/pubnub/MessageListener.html">MessageListener</a> listener)</nobr>
         
         <div class="jd-descrdiv">Register a message listener for a channel.</div>
   
@@ -1292,7 +1322,7 @@ From interface
 
 
 
-<A NAME="PubnubCloudConnectorCapabilitiesAdapter()"></A>
+<A NAME="PubNubModuleCapabilitiesAdapter()"></A>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -1304,7 +1334,7 @@ From interface
          
         
       </span>
-      <span class="sympad">PubnubCloudConnectorCapabilitiesAdapter</span>
+      <span class="sympad">PubNubModuleCapabilitiesAdapter</span>
       <span class="normal">()</span>
     </h4>
       <div class="api-level">

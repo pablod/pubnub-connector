@@ -72,7 +72,7 @@
 <link rel="shortcut icon" type="image/x-icon" href="../../../../../../favicon.ico" />
 <title>
 
-  HistoryMessageProcessor
+  PubNubModuleLifecycleAdapter
 
 
 | Mule PubNub Cloud Connector
@@ -188,10 +188,10 @@
               
     <li><h2>Classes</h2>
       <ul>
-          <li class="selected api apilevel-"><a href="../../../../../../java/org/mule/module/pubnub/config/HistoryMessageProcessor.html">HistoryMessageProcessor</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/pubnub/config/HistoryMessageProcessor.html">HistoryMessageProcessor</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/pubnub/config/PublishMessageProcessor.html">PublishMessageProcessor</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/pubnub/config/PubNubModuleCapabilitiesAdapter.html">PubNubModuleCapabilitiesAdapter</a></li>
-          <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/pubnub/config/PubNubModuleLifecycleAdapter.html">PubNubModuleLifecycleAdapter</a></li>
+          <li class="selected api apilevel-"><a href="../../../../../../java/org/mule/module/pubnub/config/PubNubModuleLifecycleAdapter.html">PubNubModuleLifecycleAdapter</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/pubnub/config/RequestMessageProcessor.html">RequestMessageProcessor</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/pubnub/config/ServerTimeMessageProcessor.html">ServerTimeMessageProcessor</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/pubnub/config/SubscribeMessageSource.html">SubscribeMessageSource</a></li>
@@ -249,6 +249,10 @@
    
   
   
+   
+  
+  
+   
   
   
 
@@ -262,17 +266,6 @@
   
    
   
-  
-   
-  
-  
-  
-
-  
-   
-  
-  
-   
   
   
   
@@ -298,6 +291,17 @@
   
    
   
+  
+   
+  
+  
+  
+
+  
+   
+  
+  
+   
   
   
   
@@ -317,9 +321,9 @@ Summary:
   
 
 
-  &#124; <a href="#lfields">Fields</a>
-  
 
+  &#124; <a href="#inhfields">Inherited Fields</a>
+  
 
 
   &#124; <a href="#pubctors">Ctors</a>
@@ -356,12 +360,20 @@ Summary:
      
     
     class
-<h1>HistoryMessageProcessor</h1>
+<h1>PubNubModuleLifecycleAdapter</h1>
 
 
 
   
-    extends Object<br/>
+  
+  
+
+  
+  
+  
+
+  
+    extends <a href="../../../../../../java/org/mule/module/pubnub/config/PubNubModuleCapabilitiesAdapter.html">PubNubModuleCapabilitiesAdapter</a><br/>
   
   
   
@@ -370,10 +382,6 @@ Summary:
   
       implements 
       
-        FlowConstructAware 
-      
-        MuleContextAware 
-      
         Disposable 
       
         Initialisable 
@@ -381,8 +389,6 @@ Summary:
         Startable 
       
         Stoppable 
-      
-        MessageProcessor 
       
   
   
@@ -398,7 +404,7 @@ Summary:
 
     <tr>
         
-        <td colspan="2" class="jd-inheritance-class-cell">java.lang.Object</td>
+        <td colspan="4" class="jd-inheritance-class-cell">java.lang.Object</td>
     </tr>
     
 
@@ -406,7 +412,29 @@ Summary:
         
             <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
         
-        <td colspan="1" class="jd-inheritance-class-cell">org.mule.module.pubnub.config.HistoryMessageProcessor</td>
+        <td colspan="3" class="jd-inheritance-class-cell"><a href="../../../../../../java/org/mule/module/pubnub/PubNubModule.html">org.mule.module.pubnub.PubNubModule</a></td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space">&nbsp;</td>
+        
+            <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
+        
+        <td colspan="2" class="jd-inheritance-class-cell"><a href="../../../../../../java/org/mule/module/pubnub/config/PubNubModuleCapabilitiesAdapter.html">org.mule.module.pubnub.config.PubNubModuleCapabilitiesAdapter</a></td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space">&nbsp;</td>
+        
+            <td class="jd-inheritance-space">&nbsp;</td>
+        
+            <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
+        
+        <td colspan="1" class="jd-inheritance-class-cell">org.mule.module.pubnub.config.PubNubModuleLifecycleAdapter</td>
     </tr>
     
 
@@ -422,7 +450,7 @@ Summary:
 
 
 <h2>Class Overview</h2>
-<p>HistoryMessageProcessor invokes the <code><a href="../../../../../../java/org/mule/module/pubnub/PubNubModule.html#history(java.lang.String, int)">history(java.lang.String, int)</a></code> method in <code><a href="../../../../../../java/org/mule/module/pubnub/PubNubModule.html">PubNubModule</a></code>. For each argument there is a field in this processor to match it.  Before invoking the actual method the processor will evaluate and transform where possible to the expected argument type.
+<p>A <code>PubNubModuleLifecycleAdapter</code> is a wrapper around <code><a href="../../../../../../java/org/mule/module/pubnub/PubNubModule.html">PubNubModule</a></code> that adds lifecycle methods to the pojo.
  
 </p>
 
@@ -472,6 +500,44 @@ Summary:
   <a href="#" class="toggle-all" onclick="return toggleAllInherited(this, null)">[Expand]</a>
   <div style="clear:left;">Inherited Constants</div></th></tr>
 
+
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-constants-org.mule.module.pubnub.PubNubModule" class="jd-expando-trigger closed"
+          ><img id="inherited-constants-org.mule.module.pubnub.PubNubModule-trigger"
+          src="../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>From class
+<a href="../../../../../../org/mule/module/pubnub/PubNubModule.html">org.mule.module.pubnub.PubNubModule</a>
+<div id="inherited-constants-org.mule.module.pubnub.PubNubModule">
+  <div id="inherited-constants-org.mule.module.pubnub.PubNubModule-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-constants-org.mule.module.pubnub.PubNubModule-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">int</td>
+        <td class="jd-linkcol"><a href="../../../../../../org/mule/module/pubnub/PubNubModule.html#MESSAGE_LIMIT">MESSAGE_LIMIT</a></td>
+        <td class="jd-descrcol" width="100%"></td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../../../../org/mule/module/pubnub/PubNubModule.html#ORIGIN">ORIGIN</a></td>
+        <td class="jd-descrcol" width="100%"></td>
+    </tr>
+    
+    
+</table>
+  </div>
+</div>
+</td></tr>
 
 
 
@@ -602,17 +668,82 @@ org.mule.api.lifecycle.Stoppable
 </td></tr>
 
 
-
-
 </table>
 
 
 
 
+
+
+
 <!-- =========== FIELD SUMMARY =========== -->
-<table id="lfields" class="jd-sumtable"><tr><th colspan="12">Fields</th></tr>
+<table id="inhfields" class="jd-sumtable"><tr><th>
+  <a href="#" class="toggle-all" onclick="return toggleAllInherited(this, null)">[Expand]</a>
+  <div style="clear:left;">Inherited Fields</div></th></tr>
 
 
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-fields-org.mule.module.pubnub.PubNubModule" class="jd-expando-trigger closed"
+          ><img id="inherited-fields-org.mule.module.pubnub.PubNubModule-trigger"
+          src="../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>From class
+<a href="../../../../../../org/mule/module/pubnub/PubNubModule.html">org.mule.module.pubnub.PubNubModule</a>
+<div id="inherited-fields-org.mule.module.pubnub.PubNubModule">
+  <div id="inherited-fields-org.mule.module.pubnub.PubNubModule-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-fields-org.mule.module.pubnub.PubNubModule-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          Client</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../org/mule/module/pubnub/PubNubModule.html#httpClient">httpClient</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          static
+          
+          Logger</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../org/mule/module/pubnub/PubNubModule.html#logger">logger</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          ObjectMapper</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../org/mule/module/pubnub/PubNubModule.html#mapper">mapper</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          String</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../org/mule/module/pubnub/PubNubModule.html#originUrl">originUrl</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
     
       <tr class="alt-color api apilevel-" >
           <td class="jd-typecol"><nobr>
@@ -620,55 +751,8 @@ org.mule.api.lifecycle.Stoppable
           
           
           String</nobr></td>
-          <td class="jd-linkcol"><a href="../../../../../../org/mule/module/pubnub/config/HistoryMessageProcessor.html#_channelType">_channelType</a></td>
-          <td class="jd-descrcol" width="100%"></td>
-      </tr>
-      
-    
-      <tr class=" api apilevel-" >
-          <td class="jd-typecol"><nobr>
-          private
-          
-          
-          int</nobr></td>
-          <td class="jd-linkcol"><a href="../../../../../../org/mule/module/pubnub/config/HistoryMessageProcessor.html#_limitType">_limitType</a></td>
-          <td class="jd-descrcol" width="100%"></td>
-      </tr>
-      
-    
-      <tr class="alt-color api apilevel-" >
-          <td class="jd-typecol"><nobr>
-          private
-          
-          
-          Object</nobr></td>
-          <td class="jd-linkcol"><a href="../../../../../../org/mule/module/pubnub/config/HistoryMessageProcessor.html#channel">channel</a></td>
-          <td class="jd-descrcol" width="100%"></td>
-      </tr>
-      
-    
-      <tr class=" api apilevel-" >
-          <td class="jd-typecol"><nobr>
-          private
-          
-          
-          ExpressionManager</nobr></td>
-          <td class="jd-linkcol"><a href="../../../../../../org/mule/module/pubnub/config/HistoryMessageProcessor.html#expressionManager">expressionManager</a></td>
-          <td class="jd-descrcol" width="100%">Mule Expression Manager
- 
-</td>
-      </tr>
-      
-    
-      <tr class="alt-color api apilevel-" >
-          <td class="jd-typecol"><nobr>
-          private
-          
-          
-          FlowConstruct</nobr></td>
-          <td class="jd-linkcol"><a href="../../../../../../org/mule/module/pubnub/config/HistoryMessageProcessor.html#flowConstruct">flowConstruct</a></td>
-          <td class="jd-descrcol" width="100%">Flow construct
- 
+          <td class="jd-linkcol"><a href="../../../../../../org/mule/module/pubnub/PubNubModule.html#publishKey">publishKey</a></td>
+          <td class="jd-descrcol" width="100%">Your publish key that allows you to send data to the PubNub cloud
 </td>
       </tr>
       
@@ -678,9 +762,10 @@ org.mule.api.lifecycle.Stoppable
           private
           
           
-          Object</nobr></td>
-          <td class="jd-linkcol"><a href="../../../../../../org/mule/module/pubnub/config/HistoryMessageProcessor.html#limit">limit</a></td>
-          <td class="jd-descrcol" width="100%"></td>
+          String</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../org/mule/module/pubnub/PubNubModule.html#secretKey">secretKey</a></td>
+          <td class="jd-descrcol" width="100%">The secret key given to you when you created the account
+</td>
       </tr>
       
     
@@ -689,10 +774,9 @@ org.mule.api.lifecycle.Stoppable
           private
           
           
-          <a href="../../../../../../java/org/mule/module/pubnub/config/PubNubModuleLifecycleAdapter.html">PubNubModuleLifecycleAdapter</a></nobr></td>
-          <td class="jd-linkcol"><a href="../../../../../../org/mule/module/pubnub/config/HistoryMessageProcessor.html#moduleObject">moduleObject</a></td>
-          <td class="jd-descrcol" width="100%">Module object
- 
+          boolean</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../org/mule/module/pubnub/PubNubModule.html#ssl">ssl</a></td>
+          <td class="jd-descrcol" width="100%">Whether to use SSL or not when communicating with the PubNub cloud
 </td>
       </tr>
       
@@ -702,32 +786,32 @@ org.mule.api.lifecycle.Stoppable
           private
           
           
-          MuleContext</nobr></td>
-          <td class="jd-linkcol"><a href="../../../../../../org/mule/module/pubnub/config/HistoryMessageProcessor.html#muleContext">muleContext</a></td>
-          <td class="jd-descrcol" width="100%">Mule Context
- 
+          String</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../org/mule/module/pubnub/PubNubModule.html#subscribeKey">subscribeKey</a></td>
+          <td class="jd-descrcol" width="100%">Your subscribe key that allows you to send data to the PubNub cloud
 </td>
       </tr>
       
     
-      <tr class="alt-color api apilevel-" >
-          <td class="jd-typecol"><nobr>
-          private
-          
-          
-          TemplateParser.PatternInfo</nobr></td>
-          <td class="jd-linkcol"><a href="../../../../../../org/mule/module/pubnub/config/HistoryMessageProcessor.html#patternInfo">patternInfo</a></td>
-          <td class="jd-descrcol" width="100%">Mule Pattern Info
- 
-</td>
-      </tr>
-      
-    
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </table>
-
-
-
 
 
 
@@ -748,7 +832,7 @@ org.mule.api.lifecycle.Stoppable
             </nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/config/HistoryMessageProcessor.html#HistoryMessageProcessor()">HistoryMessageProcessor</a></span>()</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/config/PubNubModuleLifecycleAdapter.html#PubNubModuleLifecycleAdapter()">PubNubModuleLifecycleAdapter</a></span>()</nobr>
         
   </td></tr>
 
@@ -777,7 +861,7 @@ org.mule.api.lifecycle.Stoppable
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/config/HistoryMessageProcessor.html#dispose()">dispose</a></span>()</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/config/PubNubModuleLifecycleAdapter.html#dispose()">dispose</a></span>()</nobr>
         
   </td></tr>
 
@@ -793,46 +877,8 @@ org.mule.api.lifecycle.Stoppable
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/config/HistoryMessageProcessor.html#initialise()">initialise</a></span>()</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/config/PubNubModuleLifecycleAdapter.html#initialise()">initialise</a></span>()</nobr>
         
-        <div class="jd-descrdiv">Obtains the expression manager from the Mule context and initialises the connector.</div>
-  
-  </td></tr>
-
-
-	 
-    <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            MuleEvent</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/config/HistoryMessageProcessor.html#process(org.mule.api.MuleEvent)">process</a></span>(MuleEvent event)</nobr>
-        
-        <div class="jd-descrdiv">Invokes the MessageProcessor.</div>
-  
-  </td></tr>
-
-
-	 
-    <tr class=" api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            void</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/config/HistoryMessageProcessor.html#setChannel(java.lang.Object)">setChannel</a></span>(Object value)</nobr>
-        
-        <div class="jd-descrdiv">Sets channel</div>
-  
   </td></tr>
 
 
@@ -847,79 +893,7 @@ org.mule.api.lifecycle.Stoppable
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/config/HistoryMessageProcessor.html#setFlowConstruct(org.mule.api.construct.FlowConstruct)">setFlowConstruct</a></span>(FlowConstruct flowConstruct)</nobr>
-        
-        <div class="jd-descrdiv">Sets flow construct</div>
-  
-  </td></tr>
-
-
-	 
-    <tr class=" api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            void</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/config/HistoryMessageProcessor.html#setLimit(java.lang.Object)">setLimit</a></span>(Object value)</nobr>
-        
-        <div class="jd-descrdiv">Sets limit</div>
-  
-  </td></tr>
-
-
-	 
-    <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            void</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/config/HistoryMessageProcessor.html#setModuleObject(org.mule.module.pubnub.config.PubNubModuleLifecycleAdapter)">setModuleObject</a></span>(<a href="../../../../../../java/org/mule/module/pubnub/config/PubNubModuleLifecycleAdapter.html">PubNubModuleLifecycleAdapter</a> moduleObject)</nobr>
-        
-        <div class="jd-descrdiv">Sets the instance of the object under which the processor will execute</div>
-  
-  </td></tr>
-
-
-	 
-    <tr class=" api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            void</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/config/HistoryMessageProcessor.html#setMuleContext(org.mule.api.MuleContext)">setMuleContext</a></span>(MuleContext context)</nobr>
-        
-        <div class="jd-descrdiv">Set the Mule context</div>
-  
-  </td></tr>
-
-
-	 
-    <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            void</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/config/HistoryMessageProcessor.html#start()">start</a></span>()</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/config/PubNubModuleLifecycleAdapter.html#start()">start</a></span>()</nobr>
         
   </td></tr>
 
@@ -935,7 +909,7 @@ org.mule.api.lifecycle.Stoppable
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/config/HistoryMessageProcessor.html#stop()">stop</a></span>()</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/config/PubNubModuleLifecycleAdapter.html#stop()">stop</a></span>()</nobr>
         
   </td></tr>
 
@@ -953,6 +927,382 @@ org.mule.api.lifecycle.Stoppable
 <table id="inhmethods" class="jd-sumtable"><tr><th>
   <a href="#" class="toggle-all" onclick="return toggleAllInherited(this, null)">[Expand]</a>
   <div style="clear:left;">Inherited Methods</div></th></tr>
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-org.mule.module.pubnub.config.PubNubModuleCapabilitiesAdapter" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-org.mule.module.pubnub.config.PubNubModuleCapabilitiesAdapter-trigger"
+          src="../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>
+From class
+
+  <a href="../../../../../../org/mule/module/pubnub/config/PubNubModuleCapabilitiesAdapter.html">org.mule.module.pubnub.config.PubNubModuleCapabilitiesAdapter</a>
+
+<div id="inherited-methods-org.mule.module.pubnub.config.PubNubModuleCapabilitiesAdapter">
+  <div id="inherited-methods-org.mule.module.pubnub.config.PubNubModuleCapabilitiesAdapter-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-methods-org.mule.module.pubnub.config.PubNubModuleCapabilitiesAdapter-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/config/PubNubModuleCapabilitiesAdapter.html#isCapableOf(org.mule.api.Capability)">isCapableOf</a></span>(Capability capability)</nobr>
+        
+        <div class="jd-descrdiv">Returns true if this module implements such capability
+ 
+</div>
+  
+  </td></tr>
+
+
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-org.mule.module.pubnub.PubNubModule" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-org.mule.module.pubnub.PubNubModule-trigger"
+          src="../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>
+From class
+
+  <a href="../../../../../../org/mule/module/pubnub/PubNubModule.html">org.mule.module.pubnub.PubNubModule</a>
+
+<div id="inherited-methods-org.mule.module.pubnub.PubNubModule">
+  <div id="inherited-methods-org.mule.module.pubnub.PubNubModule-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-methods-org.mule.module.pubnub.PubNubModule-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            ObjectNode</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/PubNubModule.html#createMessage()">createMessage</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Creates a new Json Object message.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/PubNubModule.html#getBaseUrl()">getBaseUrl</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/PubNubModule.html#getPublishKey()">getPublishKey</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/PubNubModule.html#getSecretKey()">getSecretKey</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/PubNubModule.html#getSubscribeKey()">getSubscribeKey</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            JsonNode</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/PubNubModule.html#history(java.lang.String, int)">history</a></span>(String channel, int limit)</nobr>
+        
+        <div class="jd-descrdiv">Load history from a channel.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/PubNubModule.html#init()">init</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/PubNubModule.html#isSsl()">isSsl</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            JsonNode</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/PubNubModule.html#publish(java.lang.String, java.lang.String)">publish</a></span>(String channel, String jsonMessage)</nobr>
+        
+        <div class="jd-descrdiv">Send a json message to a channel.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            JsonNode</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/PubNubModule.html#publish(java.lang.String, org.codehaus.jackson.JsonNode)">publish</a></span>(String channel, JsonNode jsonMessage)</nobr>
+        
+        <div class="jd-descrdiv">Send a json message to a channel.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            JsonNode</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/PubNubModule.html#request(java.lang.String, long)">request</a></span>(String channel, long timeout)</nobr>
+        
+        <div class="jd-descrdiv">Makes a blocking request to receive a message on a channel.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            double</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/PubNubModule.html#serverTime()">serverTime</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Get the Timestamp from PubNub Cloud.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/PubNubModule.html#setPublishKey(java.lang.String)">setPublishKey</a></span>(String publishKey)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/PubNubModule.html#setSecretKey(java.lang.String)">setSecretKey</a></span>(String secretKey)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/PubNubModule.html#setSsl(boolean)">setSsl</a></span>(boolean ssl)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/PubNubModule.html#setSubscribeKey(java.lang.String)">setSubscribeKey</a></span>(String subscribeKey)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/PubNubModule.html#subscribe(java.lang.String, org.mule.api.callback.SourceCallback)">subscribe</a></span>(String channel, SourceCallback callback)</nobr>
+        
+        <div class="jd-descrdiv">Listen for a message on a channel.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/pubnub/PubNubModule.html#subscribe(java.lang.String, org.mule.module.pubnub.MessageListener)">subscribe</a></span>(String channel, <a href="../../../../../../java/org/mule/module/pubnub/MessageListener.html">MessageListener</a> listener)</nobr>
+        
+        <div class="jd-descrdiv">Register a message listener for a channel.</div>
+  
+  </td></tr>
+
+
+</table>
+  </div>
+</div>
+</td></tr>
+
 
 
 <tr class="api apilevel-" >
@@ -1159,19 +1509,19 @@ From class
 
 <tr class="api apilevel-" >
 <td colspan="12">
-  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-org.mule.api.construct.FlowConstructAware" class="jd-expando-trigger closed"
-          ><img id="inherited-methods-org.mule.api.construct.FlowConstructAware-trigger"
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-org.mule.api.Capabilities" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-org.mule.api.Capabilities-trigger"
           src="../../../../../../assets/images/triangle-closed.png"
           class="jd-expando-trigger-img" /></a>
 From interface
 
-  org.mule.api.construct.FlowConstructAware
+  org.mule.api.Capabilities
 
-<div id="inherited-methods-org.mule.api.construct.FlowConstructAware">
-  <div id="inherited-methods-org.mule.api.construct.FlowConstructAware-list"
+<div id="inherited-methods-org.mule.api.Capabilities">
+  <div id="inherited-methods-org.mule.api.Capabilities-list"
         class="jd-inheritedlinks">
   </div>
-  <div id="inherited-methods-org.mule.api.construct.FlowConstructAware-summary" style="display: none;">
+  <div id="inherited-methods-org.mule.api.Capabilities-summary" style="display: none;">
     <table class="jd-sumtable-expando">
     
 
@@ -1184,52 +1534,10 @@ From interface
             
             
             
-            void</nobr>
+            boolean</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad">setFlowConstruct</span>(FlowConstruct arg0)</nobr>
-        
-  </td></tr>
-
-
-</table>
-  </div>
-</div>
-</td></tr>
-
-
-
-<tr class="api apilevel-" >
-<td colspan="12">
-  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-org.mule.api.context.MuleContextAware" class="jd-expando-trigger closed"
-          ><img id="inherited-methods-org.mule.api.context.MuleContextAware-trigger"
-          src="../../../../../../assets/images/triangle-closed.png"
-          class="jd-expando-trigger-img" /></a>
-From interface
-
-  org.mule.api.context.MuleContextAware
-
-<div id="inherited-methods-org.mule.api.context.MuleContextAware">
-  <div id="inherited-methods-org.mule.api.context.MuleContextAware-list"
-        class="jd-inheritedlinks">
-  </div>
-  <div id="inherited-methods-org.mule.api.context.MuleContextAware-summary" style="display: none;">
-    <table class="jd-sumtable-expando">
-    
-
-
-	 
-    <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            abstract
-            
-            
-            
-            
-            void</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad">setMuleContext</span>(MuleContext arg0)</nobr>
+        <span class="sympad">isCapableOf</span>(Capability arg0)</nobr>
         
   </td></tr>
 
@@ -1408,48 +1716,6 @@ From interface
 </td></tr>
 
 
-
-<tr class="api apilevel-" >
-<td colspan="12">
-  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-org.mule.api.processor.MessageProcessor" class="jd-expando-trigger closed"
-          ><img id="inherited-methods-org.mule.api.processor.MessageProcessor-trigger"
-          src="../../../../../../assets/images/triangle-closed.png"
-          class="jd-expando-trigger-img" /></a>
-From interface
-
-  org.mule.api.processor.MessageProcessor
-
-<div id="inherited-methods-org.mule.api.processor.MessageProcessor">
-  <div id="inherited-methods-org.mule.api.processor.MessageProcessor-list"
-        class="jd-inheritedlinks">
-  </div>
-  <div id="inherited-methods-org.mule.api.processor.MessageProcessor-summary" style="display: none;">
-    <table class="jd-sumtable-expando">
-    
-
-
-	 
-    <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            abstract
-            
-            
-            
-            
-            MuleEvent</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad">process</span>(MuleEvent arg0)</nobr>
-        
-  </td></tr>
-
-
-</table>
-  </div>
-</div>
-</td></tr>
-
-
 </table>
 
 
@@ -1476,293 +1742,6 @@ From interface
 <!-- Fields -->
 
 
-<!-- ========= FIELD DETAIL ======== -->
-<h2>Fields</h2>
-
-
-
-
-<A NAME="_channelType"></A>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        private 
-         
-         
-        String
-      </span>
-        _channelType
-    </h4>
-      <div class="api-level">
-        
-
-
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
-
-    
-    </div>
-</div>
-
-
-
-<A NAME="_limitType"></A>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        private 
-         
-         
-        int
-      </span>
-        _limitType
-    </h4>
-      <div class="api-level">
-        
-
-
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
-
-    
-    </div>
-</div>
-
-
-
-<A NAME="channel"></A>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        private 
-         
-         
-        Object
-      </span>
-        channel
-    </h4>
-      <div class="api-level">
-        
-
-
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
-
-    
-    </div>
-</div>
-
-
-
-<A NAME="expressionManager"></A>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        private 
-         
-         
-        ExpressionManager
-      </span>
-        expressionManager
-    </h4>
-      <div class="api-level">
-        
-
-
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p>Mule Expression Manager
- 
-</p></div>
-
-    
-    </div>
-</div>
-
-
-
-<A NAME="flowConstruct"></A>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        private 
-         
-         
-        FlowConstruct
-      </span>
-        flowConstruct
-    </h4>
-      <div class="api-level">
-        
-
-
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p>Flow construct
- 
-</p></div>
-
-    
-    </div>
-</div>
-
-
-
-<A NAME="limit"></A>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        private 
-         
-         
-        Object
-      </span>
-        limit
-    </h4>
-      <div class="api-level">
-        
-
-
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
-
-    
-    </div>
-</div>
-
-
-
-<A NAME="moduleObject"></A>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        private 
-         
-         
-        <a href="../../../../../../java/org/mule/module/pubnub/config/PubNubModuleLifecycleAdapter.html">PubNubModuleLifecycleAdapter</a>
-      </span>
-        moduleObject
-    </h4>
-      <div class="api-level">
-        
-
-
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p>Module object
- 
-</p></div>
-
-    
-    </div>
-</div>
-
-
-
-<A NAME="muleContext"></A>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        private 
-         
-         
-        MuleContext
-      </span>
-        muleContext
-    </h4>
-      <div class="api-level">
-        
-
-
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p>Mule Context
- 
-</p></div>
-
-    
-    </div>
-</div>
-
-
-
-<A NAME="patternInfo"></A>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        private 
-         
-         
-        TemplateParser.PatternInfo
-      </span>
-        patternInfo
-    </h4>
-      <div class="api-level">
-        
-
-
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p>Mule Pattern Info
- 
-</p></div>
-
-    
-    </div>
-</div>
-
-
-
-
 <!-- Public ctors -->
 
 
@@ -1771,7 +1750,7 @@ From interface
 
 
 
-<A NAME="HistoryMessageProcessor()"></A>
+<A NAME="PubNubModuleLifecycleAdapter()"></A>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -1783,7 +1762,7 @@ From interface
          
         
       </span>
-      <span class="sympad">HistoryMessageProcessor</span>
+      <span class="sympad">PubNubModuleLifecycleAdapter</span>
       <span class="normal">()</span>
     </h4>
       <div class="api-level">
@@ -1873,270 +1852,7 @@ From interface
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>Obtains the expression manager from the Mule context and initialises the connector. If a target object  has not been set already it will search the Mule registry for a default one.</p></div>
-  <div class="jd-tagdata">
-      <h5 class="jd-tagtitle">Throws</h5>
-      <table class="jd-tagtable">  
-        <tr>
-            <th>InitialisationException</td>
-            <td></td>
-        </tr>
-      </table>
-  </div>
-
-    </div>
-</div>
-
-
-<A NAME="process(org.mule.api.MuleEvent)"></A>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-         
-         
-        MuleEvent
-      </span>
-      <span class="sympad">process</span>
-      <span class="normal">(MuleEvent event)</span>
-    </h4>
-      <div class="api-level">
-        <div>
-
-</div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p>Invokes the MessageProcessor.</p></div>
-  <div class="jd-tagdata">
-      <h5 class="jd-tagtitle">Parameters</h5>
-      <table class="jd-tagtable">
-        <tr>
-          <th>event</td>
-          <td>MuleEvent to be processed</td>
-        </tr>
-      </table>
-  </div>
-  <div class="jd-tagdata">
-      <h5 class="jd-tagtitle">Throws</h5>
-      <table class="jd-tagtable">  
-        <tr>
-            <th>MuleException</td>
-            <td></td>
-        </tr>
-      </table>
-  </div>
-
-    </div>
-</div>
-
-
-<A NAME="setChannel(java.lang.Object)"></A>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-         
-         
-        void
-      </span>
-      <span class="sympad">setChannel</span>
-      <span class="normal">(Object value)</span>
-    </h4>
-      <div class="api-level">
-        <div>
-
-</div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p>Sets channel</p></div>
-  <div class="jd-tagdata">
-      <h5 class="jd-tagtitle">Parameters</h5>
-      <table class="jd-tagtable">
-        <tr>
-          <th>value</td>
-          <td>Value to set
-</td>
-        </tr>
-      </table>
-  </div>
-
-    </div>
-</div>
-
-
-<A NAME="setFlowConstruct(org.mule.api.construct.FlowConstruct)"></A>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-         
-         
-        void
-      </span>
-      <span class="sympad">setFlowConstruct</span>
-      <span class="normal">(FlowConstruct flowConstruct)</span>
-    </h4>
-      <div class="api-level">
-        <div>
-
-</div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p>Sets flow construct</p></div>
-  <div class="jd-tagdata">
-      <h5 class="jd-tagtitle">Parameters</h5>
-      <table class="jd-tagtable">
-        <tr>
-          <th>flowConstruct</td>
-          <td>Flow construct to set
-</td>
-        </tr>
-      </table>
-  </div>
-
-    </div>
-</div>
-
-
-<A NAME="setLimit(java.lang.Object)"></A>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-         
-         
-        void
-      </span>
-      <span class="sympad">setLimit</span>
-      <span class="normal">(Object value)</span>
-    </h4>
-      <div class="api-level">
-        <div>
-
-</div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p>Sets limit</p></div>
-  <div class="jd-tagdata">
-      <h5 class="jd-tagtitle">Parameters</h5>
-      <table class="jd-tagtable">
-        <tr>
-          <th>value</td>
-          <td>Value to set
-</td>
-        </tr>
-      </table>
-  </div>
-
-    </div>
-</div>
-
-
-<A NAME="setModuleObject(org.mule.module.pubnub.config.PubNubModuleLifecycleAdapter)"></A>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-         
-         
-        void
-      </span>
-      <span class="sympad">setModuleObject</span>
-      <span class="normal">(<a href="../../../../../../java/org/mule/module/pubnub/config/PubNubModuleLifecycleAdapter.html">PubNubModuleLifecycleAdapter</a> moduleObject)</span>
-    </h4>
-      <div class="api-level">
-        <div>
-
-</div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p>Sets the instance of the object under which the processor will execute</p></div>
-  <div class="jd-tagdata">
-      <h5 class="jd-tagtitle">Parameters</h5>
-      <table class="jd-tagtable">
-        <tr>
-          <th>moduleObject</td>
-          <td>Instace of the module
-</td>
-        </tr>
-      </table>
-  </div>
-
-    </div>
-</div>
-
-
-<A NAME="setMuleContext(org.mule.api.MuleContext)"></A>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-         
-         
-        void
-      </span>
-      <span class="sympad">setMuleContext</span>
-      <span class="normal">(MuleContext context)</span>
-    </h4>
-      <div class="api-level">
-        <div>
-
-</div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p>Set the Mule context</p></div>
-  <div class="jd-tagdata">
-      <h5 class="jd-tagtitle">Parameters</h5>
-      <table class="jd-tagtable">
-        <tr>
-          <th>context</td>
-          <td>Mule context to set
-</td>
-        </tr>
-      </table>
-  </div>
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
 
     </div>
 </div>
