@@ -34,6 +34,8 @@ import java.util.List;
  * <p/>
  * PubNub is a freemium service where users get 5,000 messages per day for free but then have reasonable pricing
  * plans for higher volume usage.  For more information go to PubNub: http://pubnub.com
+ *
+ * @author MuleSoft, Inc.
  */
 @Module(name = "pubnub")
 public class PubNubModule {
@@ -228,6 +230,7 @@ public class PubNubModule {
      * {@sample.xml ../../../doc/mule-module-pubnub.xml.sample pubnub:subscribe}
      *
      * @param channel  name to listen on
+     * @param callback Callback to execute when a message comes in
      */
     @Source
     public void subscribe(String channel, final SourceCallback callback) {
