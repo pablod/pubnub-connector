@@ -46,7 +46,7 @@ public class PubnubFunctionalJavaTestCase {
         msg.put("some_val", TEST_VALUE);
         JsonNode info = pubnub.publish(CHANNEL, msg);
         Assert.assertEquals("TODO what is this value", 1, info.get(0).getIntValue());
-        Assert.assertEquals("TODO what is this code", "D", info.get(1).getTextValue()); //TODO what are the return codes?
+        Assert.assertEquals("TODO what is this code", "Sent", info.get(1).getTextValue()); //TODO what are the return codes?
     }
 
     @Test
