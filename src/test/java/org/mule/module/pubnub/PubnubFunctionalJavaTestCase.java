@@ -14,11 +14,13 @@ import org.codehaus.jackson.JsonNode;
 import org.codehaus.jackson.node.ObjectNode;
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.mule.util.concurrent.Latch;
 
 import java.util.concurrent.TimeUnit;
 
+@Ignore
 public class PubnubFunctionalJavaTestCase {
     private final String CHANNEL = "cc_channel";
     // TODO doesn't preserve chars first two chars
